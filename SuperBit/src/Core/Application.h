@@ -31,12 +31,17 @@ namespace SuperBit {
 
 		void Run();
 		void OnEvent(Event& e);
-		void OnUpdate(Timestep ts);
+		void OnUpdateGameRunning(Timestep ts);
+		void OnUpdateGamePaused(Timestep ts);
 
 
 		inline static Application& Get() { return *s_Instance; }
 
 		void Close() { m_Running = false; }
+
+		void StartGame();
+		void Render();
+		void EndGame();
 
 		Window& GetWindow() { return *m_Window; }
 		ImGuiLayer* GetImGuiLayer() { return m_ImguiLayer; }
@@ -49,6 +54,8 @@ namespace SuperBit {
 
 	public:
 
+		bool m_GameRunning = false;
+
 		Person* Player;
 		Person* Player2 = nullptr;
 		Person* Dealer;
@@ -57,12 +64,14 @@ namespace SuperBit {
 
 		std::vector<int> pachet;
 
-		int nr_carti_pachet = 52;
-		bool frec[53] = { 0 };
+		int nr_carti_pachet = 52 * 2;
+		int frec[53] = { 0 };
 
 		int m_Money = 100;
 
 		Timestep endedTime;
+		Timestep gameEndedTime = -1;
+		Timestep gameStartedTime = -1;
 		Timestep timestep;
 
 		bool GameOver = false;
@@ -85,5 +94,11 @@ namespace SuperBit {
 		std::shared_ptr<Texture> background;
 		std::shared_ptr<Texture> logo;
 		std::shared_ptr<Texture> back;
+		
+		std::shared_ptr<Texture> Chip1;
+		std::shared_ptr<Texture> Chip5;
+		std::shared_ptr<Texture> Chip20;
+		std::shared_ptr<Texture> Chip100;
+		std::shared_ptr<Texture> Chip500;
 	};
 }

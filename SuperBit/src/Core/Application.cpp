@@ -40,27 +40,30 @@ namespace SuperBit {
 		logo = std::make_shared<Texture>("../assets/textures/1.png");
 		back = std::make_shared<Texture>("../assets/textures2/back_red.png");
 
-		//m_Cards.push_back(Card({ 450, 150, 0.001 }, { 150, 150 }, std::make_shared<Texture>("../assets/textures/Club13.png")));
-		//m_Cards.push_back(Card({ 550, 150, 1 }, { 150, 150 }, std::make_shared<Texture>("../assets/textures/Club13.png")));
+		Chip1 = std::make_shared<Texture>("../assets/textures/RedChip.png");
+		Chip5 = std::make_shared<Texture>("../assets/textures/YellowChip.png");
+		Chip20 = std::make_shared<Texture>("../assets/textures/BlueChip.png");
+		Chip100 = std::make_shared<Texture>("../assets/textures/GreenChip.png");
+		Chip500 = std::make_shared<Texture>("../assets/textures/PurpleChip.png");
 
 		Player = new Person(0);
 		Dealer = new Person(1);
 
-		Player->m_Position = { 485, 0 };
-
-		CurrentPlayer = Player;
-
 		while (nr_carti_pachet > 0)
 		{
 			int x = rand() % 52;
-			if (frec[x] == 0)
+			if (frec[x] < 2)
 			{
-				frec[x] = 1;
+				frec[x]++;
 				nr_carti_pachet--;
 				SB_ERROR("{0}", x);
 				pachet.push_back(x);
 			}
 		}
+
+		Player->m_Position = { 485, 0 };
+
+		CurrentPlayer = Player;
 	}
 
 	Application::~Application()
@@ -79,213 +82,173 @@ namespace SuperBit {
 			timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
-			Renderer2D::BeginScene(m_ProjectionData);
+			SB_INFO("{0}", m_GameRunning);
 
-			Renderer2D::DrawQuad({ m_Window->GetWidth() / 2, m_Window->GetHeight() / 2, 0 }, { m_Window->GetWidth(), m_Window->GetHeight() }, background);
+			Render();
 
-			for (auto& card : Player->m_Cards)
+			if (m_GameRunning)
 			{
-				Renderer2D::DrawQuad(card);
-				//card.m_FinalPos = { Player->m_Position.x, Player->m_Position.y, card.m_FinalPos.z };
-				//card.m_FinalPos.x = Player->m_Position.x;
-				//card.CalculateStep();
-				if (card.nrOfSteps > 0)
+				if (gameStartedTime == -1)
+					gameStartedTime = time;
+
+				if (gameStartedTime != -1)
 				{
-					card.m_Pos.x += card.stepX * 0.016;
-					card.m_Pos.y += card.stepY * 0.016;
-					card.m_Rotation += card.stepR * 0.016;
-					card.nrOfSteps--;
+					if (time - gameStartedTime > 2.5 && Dealer->m_NrOfCards == 0)
+						Dealer->AddCard();
+					if (time - gameStartedTime > 3.5 && Dealer->m_NrOfCards == 1)
+						Dealer->AddHiddenCard();
+
+					if (time - gameStartedTime > 2 && Player->m_NrOfCards == 0 && !Player2)
+						Player->AddCard();
+					if (time - gameStartedTime > 3 && Player->m_NrOfCards == 1 && !Player2)
+						Player->AddCard();
 				}
-				SB_INFO("{0}", card.nrOfSteps);
-			}
 
-			if (Player2)
-			{
-				for (auto& card : Player2->m_Cards)
+				if (CurrentPlayer->m_Sum > 21 && CurrentPlayer->m_NrOfAces)
 				{
-					Renderer2D::DrawQuad(card);
-					//card.m_FinalPos = { Player2->m_Position.x, Player2->m_Position.y, card.m_FinalPos.z };
-					//card.m_FinalPos.x = Player2->m_Position.x;
-					//card.CalculateStep();
-					if (card.nrOfSteps > 0)
+					CurrentPlayer->m_Sum -= 11;
+					CurrentPlayer->m_NrOfAces--;
+				}
+
+				if (Dealer->m_Sum > 21 && Dealer->m_NrOfAces)
+				{
+					Dealer->m_Sum -= 11;
+					Dealer->m_NrOfAces--;
+				}
+
+				if (CurrentPlayer->m_Sum > 21 && !CurrentPlayer->GameOver)
+				{
+					endedTime = time;
+					m_Money -= CurrentPlayer->m_Bet;
+					CurrentPlayer->m_Message = "Bust";
+					CurrentPlayer->GameOver = true;
+					CurrentPlayer->TurnOver = true;
+				}
+
+				if (CurrentPlayer->GameOver || CurrentPlayer->TurnOver)
+				{
+					if (Player2)
 					{
-						card.m_Pos.x += card.stepX * 0.016;
-						card.m_Pos.y += card.stepY * 0.016;
-						card.m_Rotation += card.stepR * 0.016;
-						card.nrOfSteps--;
-					}
-					
-				}
-			}
-
-			for (auto& card : Dealer->m_Cards)
-			{
-				Renderer2D::DrawQuad(card);
-				if (card.nrOfSteps > 0)
-				{
-					card.m_Pos.x += card.stepX * 0.016;
-					card.m_Pos.y += card.stepY * 0.016;
-					card.m_Rotation += card.stepR * 0.016;
-					card.nrOfSteps--;
-				}
-			}
-
-			for (int i = 0; i <= 5; ++i)
-			{
-				Renderer2D::DrawQuad({ 845 - i * 5, 400, 0 + 0.990 + i * 0.001 }, { 96, 150 }, back);
-			}
-
-			Renderer2D::DrawQuad({ 181, 517, 1 }, { 666 / 3, 375 / 3 }, logo);
-			
-			if (time > 2.5 && Dealer->m_NrOfCards == 0)
-				Dealer->AddCard();
-			if (time > 3.5 && Dealer->m_NrOfCards == 1)
-				Dealer->AddHiddenCard();
-
-			if (time > 2 && Player->m_NrOfCards == 0 && !Player2)
-				Player->AddCard();
-			if (time > 3 && Player->m_NrOfCards == 1 && !Player2)
-				Player->AddCard();
-
-			if (CurrentPlayer->m_Sum > 21 && CurrentPlayer->m_NrOfAces)
-			{
-				CurrentPlayer->m_Sum -= 11;
-				CurrentPlayer->m_NrOfAces--;
-			}
-
-			if (Dealer->m_Sum > 21 && Dealer->m_NrOfAces)
-			{
-				Dealer->m_Sum -= 11;
-				Dealer->m_NrOfAces--;
-			}
-
-			if (CurrentPlayer->m_Sum > 21 && !CurrentPlayer->GameOver)
-			{
-				endedTime = time;
-				m_Money -= CurrentPlayer->m_Bet;
-				CurrentPlayer->m_Message = "Bust";
-				CurrentPlayer->GameOver = true;
-				CurrentPlayer->TurnOver = true;
-			}
-
-			if (CurrentPlayer->GameOver || CurrentPlayer->TurnOver)
-			{
-				if (Player2)
-				{
-					if (!Player2->GameOver && !Player2->TurnOver)
-					{
-						CurrentPlayer = Player2;
-					}
-				}
-			}
-
-			if (CurrentPlayer->GameOver)
-			{
-				if (Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture != nullptr)
-				{
-					Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Texture = Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture;
-					Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture = nullptr;
-					Dealer->m_Sum += Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Indice;
-				}
-			}
-
-			if (CurrentPlayer->TurnOver)
-			{
-				if (Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture != nullptr)
-				{
-					Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Texture = Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture;
-					Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture = nullptr;
-					Dealer->m_Sum += Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Indice;
-				}
-
-				if (Player2 && Dealer->m_Sum < 17)
-				{
-					if (!Player->GameOver || !Player2->GameOver)
-					{
-						if (time - endedTime > 2)
+						if (!Player2->GameOver && !Player2->TurnOver)
 						{
-							Dealer->AddCard();
-							endedTime = time;
+							CurrentPlayer = Player2;
 						}
 					}
 				}
-				else 
+
+				if (CurrentPlayer->GameOver)
 				{
-					/*if (Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture != nullptr)
+					if (Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture != nullptr)
 					{
 						Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Texture = Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture;
 						Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture = nullptr;
 						Dealer->m_Sum += Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Indice;
-					}*/
+					}
+				}
 
-					if (!Player->GameOver && Dealer->m_Sum < 17)
+				if (CurrentPlayer->TurnOver)
+				{
+					if (Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture != nullptr)
 					{
-						if (time - endedTime > 2)
+						Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Texture = Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture;
+						Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_FrontTexture = nullptr;
+						Dealer->m_Sum += Dealer->m_Cards[Dealer->m_Cards.size() - 1].m_Indice;
+					}
+
+					if (Player2 && Dealer->m_Sum < 17)
+					{
+						if (!Player->GameOver || !Player2->GameOver)
 						{
-							Dealer->AddCard();
-							endedTime = time;
+							if (time - endedTime > 2)
+							{
+								Dealer->AddCard();
+								endedTime = time;
+							}
+						}
+					}
+					else
+					{
+						if (!Player->GameOver && Dealer->m_Sum < 17)
+						{
+							if (time - endedTime > 2)
+							{
+								Dealer->AddCard();
+								endedTime = time;
+							}
 						}
 					}
 				}
-			}
 
-			if (!Player->GameOver && CurrentPlayer->TurnOver && Dealer->m_Sum >= 17)
-			{
-				Player->GameOver = true;
-				if (Dealer->m_Sum < Player->m_Sum || Dealer->m_Sum > 21)
+				if (!Player->GameOver && CurrentPlayer->TurnOver && Dealer->m_Sum >= 17)
 				{
-					Player->m_Message = "You Win";
-					m_Money += Player->m_Bet;
+					Player->GameOver = true;
+					if (Dealer->m_Sum < Player->m_Sum || Dealer->m_Sum > 21)
+					{
+						Player->m_Message = "You Win";
+						m_Money += Player->m_Bet;
+					}
+					else if (Dealer->m_Sum > Player->m_Sum)
+					{
+						Player->m_Message = "You Lose";
+						m_Money -= Player->m_Bet;
+					}
+					else if (Dealer->m_Sum == Player->m_Sum)
+						Player->m_Message = "Push";
 				}
-				else if (Dealer->m_Sum > Player->m_Sum)
+
+				if (Player2)
 				{
-					Player->m_Message = "You Lose";
-					m_Money -= Player->m_Bet;
+					if (!Player2->GameOver && CurrentPlayer->TurnOver && Dealer->m_Sum >= 17)
+					{
+						Player2->GameOver = true;
+						if (Dealer->m_Sum < Player2->m_Sum || Dealer->m_Sum > 21)
+						{
+							Player2->m_Message = "You Win";
+							m_Money += Player2->m_Bet;
+						}
+						else if (Dealer->m_Sum > Player2->m_Sum)
+						{
+							Player2->m_Message = "You Lose";
+							m_Money -= Player2->m_Bet;
+						}
+						else if (Dealer->m_Sum == Player2->m_Sum)
+							Player2->m_Message = "Push";
+					}
 				}
-				else if (Dealer->m_Sum == Player->m_Sum)
-					Player->m_Message = "Push";
 			}
 
 			if (Player2)
 			{
-				if (!Player2->GameOver && CurrentPlayer->TurnOver && Dealer->m_Sum >= 17)
+				if (Player->GameOver && Player2->GameOver && gameEndedTime == -1)
 				{
-					Player2->GameOver = true;
-					if (Dealer->m_Sum < Player2->m_Sum || Dealer->m_Sum > 21)
-					{
-						Player2->m_Message = "You Win";
-						m_Money += Player2->m_Bet;
-					}
-					else if (Dealer->m_Sum > Player2->m_Sum)
-					{
-						Player2->m_Message = "You Lose";
-						m_Money -= Player2->m_Bet;
-					}
-					else if (Dealer->m_Sum == Player2->m_Sum)
-						Player2->m_Message = "Push";
+					gameEndedTime = time;
 				}
 			}
-
-			if (Player2)
+			else if (Player->GameOver && gameEndedTime == -1)
 			{
-				SB_INFO("{0}, {1}", Player->GameOver, Player2->GameOver);
+				gameEndedTime = time;
 			}
 
-			Renderer2D::EndScene();
+			if (gameEndedTime != -1 && time - gameEndedTime > 7)
+			{
+				EndGame();
+			}
 
 			m_ImguiLayer->Begin();
-			this->OnUpdate(timestep);
+			if (m_GameRunning)
+				this->OnUpdateGameRunning(timestep);
+			else
+				this->OnUpdateGamePaused(timestep);
+			
 			m_ImguiLayer->End();
 
 			m_Window->OnUpdate();
 		}
 	}
 
-	void Application::OnUpdate(Timestep ts)
+	void Application::OnUpdateGameRunning(Timestep ts)
 	{
 		ImGuiIO& io = ImGui::GetIO();
-
-		//Application& app = Application::Get();
 
 		ImGui::SetNextWindowSize(ImVec2(1000, 562));
 		ImGui::SetNextWindowPos(ImVec2(0, 0));
@@ -419,12 +382,141 @@ namespace SuperBit {
 		ImGui::End();
 	}
 
+	void Application::OnUpdateGamePaused(Timestep ts)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+
+		ImGui::SetNextWindowSize(ImVec2(1000, 562));
+		ImGui::SetNextWindowPos(ImVec2(0, 0));
+
+		ImGuiWindowFlags window_flags = 0;
+		window_flags |= ImGuiWindowFlags_NoBackground;
+		window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+
+		bool open = true;
+		ImGui::Begin("Hello", &open, window_flags);
+
+		ImGui::PushFont(io.Fonts->Fonts[0]);
+
+		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 12);
+
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.7f, 0.0f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+
+		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(100), ImGuiLayer::CursorCenteredVertically(50) });
+
+		if (ImGui::Button("Play", { 100, 50 }))
+		{
+			StartGame();
+		}
+
+		ImGui::PopFont();
+		ImGui::PopStyleVar();
+		ImGui::PopStyleColor(3);
+
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.0f, 0.0f, 0.0f, 0.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.0f, 0.0f, 0.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 0.0f });
+
+		ImGui::SetCursorPosX(330);
+		ImGui::ImageButton((void*)Chip1->GetRendererID(), ImVec2(50, 50));
+		ImGui::SameLine(); ImGui::ImageButton((void*)Chip5->GetRendererID(), ImVec2(50, 50));
+		ImGui::SameLine(); ImGui::ImageButton((void*)Chip20->GetRendererID(), ImVec2(50, 50));
+		ImGui::SameLine(); ImGui::ImageButton((void*)Chip100->GetRendererID(), ImVec2(50, 50));
+		ImGui::SameLine(); ImGui::ImageButton((void*)Chip500->GetRendererID(), ImVec2(50, 50));
+
+		ImGui::PopStyleColor(3);
+
+		ImGui::End();
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
 		//dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 
+	}
+
+	void Application::StartGame()
+	{
+		m_GameRunning = true;
+		gameEndedTime = -1;
+	}
+
+	void Application::Render()
+	{
+		Renderer2D::BeginScene(m_ProjectionData);
+
+		Renderer2D::DrawQuad({ m_Window->GetWidth() / 2, m_Window->GetHeight() / 2, 0 }, { m_Window->GetWidth(), m_Window->GetHeight() }, background);
+
+		Player->m_Cards.size();
+
+		for (auto& card : Player->m_Cards)
+		{
+			Renderer2D::DrawQuad(card);
+			if (card.nrOfSteps > 0)
+			{
+				card.m_Pos.x += card.stepX * 0.016;
+				card.m_Pos.y += card.stepY * 0.016;
+				card.m_Rotation += card.stepR * 0.016;
+				card.nrOfSteps--;
+			}
+		}
+
+		if (Player2)
+		{
+			for (auto& card : Player2->m_Cards)
+			{
+				Renderer2D::DrawQuad(card);
+				if (card.nrOfSteps > 0)
+				{
+					card.m_Pos.x += card.stepX * 0.016;
+					card.m_Pos.y += card.stepY * 0.016;
+					card.m_Rotation += card.stepR * 0.016;
+					card.nrOfSteps--;
+				}
+
+			}
+		}
+
+		for (auto& card : Dealer->m_Cards)
+		{
+			Renderer2D::DrawQuad(card);
+			if (card.nrOfSteps > 0)
+			{
+				card.m_Pos.x += card.stepX * 0.016;
+				card.m_Pos.y += card.stepY * 0.016;
+				card.m_Rotation += card.stepR * 0.016;
+				card.nrOfSteps--;
+			}
+		}
+
+		for (int i = 0; i <= 5; ++i)
+		{
+			Renderer2D::DrawQuad({ 845 - i * 5, 400, 0 + 0.990 + i * 0.001 }, { 96, 150 }, back);
+		}
+
+		Renderer2D::DrawQuad({ 181, 517, 1 }, { 666 / 3, 375 / 3 }, logo);
+		Renderer2D::EndScene();
+	}
+
+	void Application::EndGame()
+	{
+		m_GameRunning = false;
+		gameStartedTime = -1;
+
+		delete Player2;
+		delete Player;
+		delete Dealer;
+
+		Player = new Person(0);
+		Dealer = new Person(1);
+
+		Player->m_Position = { 485, 0 };
+
+		CurrentPlayer = Player;
 	}
 
 	void Application::OnResize(float width, float height)

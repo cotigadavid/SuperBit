@@ -1,0 +1,53 @@
+﻿  Application.cpp
+D:\SuperBit\SuperBit\src\Core\Application.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Input.cpp
+D:\SuperBit\SuperBit\src\Core\Input.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Log.cpp
+D:\SuperBit\SuperBit\src\Core\Log.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  ProjectionData.cpp
+D:\SuperBit\SuperBit\src\Core\ProjectionData.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Card.cpp
+D:\SuperBit\SuperBit\src\Game\Card.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Person.cpp
+D:\SuperBit\SuperBit\src\Game\Person.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  ImGuiLayer.cpp
+D:\SuperBit\SuperBit\src\ImGui\ImGuiLayer.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  main.cpp
+D:\SuperBit\SuperBit\src\main.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Buffer.cpp
+D:\SuperBit\SuperBit\src\OpenGL\Buffer.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  OpenGLContext.cpp
+D:\SuperBit\SuperBit\src\OpenGL\OpenGLContext.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Renderer.cpp
+D:\SuperBit\SuperBit\src\OpenGL\Renderer.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Renderer2D.cpp
+D:\SuperBit\SuperBit\src\OpenGL\Renderer2D.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Shader.cpp
+D:\SuperBit\SuperBit\src\OpenGL\Shader.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Texture.cpp
+D:\SuperBit\SuperBit\src\OpenGL\Texture.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  VertexArray.cpp
+D:\SuperBit\SuperBit\src\OpenGL\VertexArray.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  sbpch.cpp
+D:\SuperBit\SuperBit\src\sbpch.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui_demo.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_demo.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui_draw.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_draw.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui_impl_glfw.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_glfw.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Generating Code...
+  Compiling...
+  imgui_impl_opengl3.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui_tables.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_tables.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  imgui_widgets.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_widgets.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Window.cpp
+D:\SuperBit\SuperBit\src\Window\Window.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  stb_image.cpp
+D:\SuperBit\SuperBit\vendor\stb_image\stb_image.cpp(1,10): fatal error C1083: Cannot open precompiled header file: '..\bin-int\Release-windows-x86_64\SuperBit\SuperBit.pch': No such file or directory
+  Generating Code...
