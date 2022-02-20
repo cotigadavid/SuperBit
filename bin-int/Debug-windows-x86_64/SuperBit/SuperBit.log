@@ -1,44 +1,44 @@
 ﻿  Application.cpp
 D:\SuperBit\SuperBit\src\Core\Application.cpp(25,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(423,51): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(424,70): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(425,71): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(426,72): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(427,72): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(454,23): warning C4834: discarding return value of function with 'nodiscard' attribute
-D:\SuperBit\SuperBit\src\Core\Application.cpp(461,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(435,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(436,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(437,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(438,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(439,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(489,23): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\SuperBit\SuperBit\src\Core\Application.cpp(496,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(462,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(497,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(463,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(475,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(498,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(510,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(476,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(511,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(477,43): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(489,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(512,43): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(524,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(490,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(525,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(491,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(524,27): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(524,20): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(526,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(559,27): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(559,20): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
   SuperBit.vcxproj -> D:\SuperBit\bin\Debug-windows-x86_64\SuperBit\SuperBit.exe

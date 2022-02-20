@@ -44,9 +44,9 @@ namespace SuperBit {
 
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 
-		io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Bold.ttf", 36.0f);
-		io.FontDefault = io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Regular.ttf", 36.0f);
-		io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Bold.ttf", 25.0f);
+		io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Bold.ttf", 36.0f * 1.28);
+		io.FontDefault = io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Regular.ttf", 36.0f * 1.28);
+		io.Fonts->AddFontFromFileTTF("../assets/fonts/OpenSans-Bold.ttf", 25.0f * 1.28);
 
 		ImGui::StyleColorsDark();
 

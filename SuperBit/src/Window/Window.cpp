@@ -31,11 +31,6 @@ namespace SuperBit {
 
 	void Window::Init(const WindowProps& props)
 	{
-		m_Data.Title = props.Title;
-		m_Data.Width = props.Width;
-		m_Data.Height = props.Height;
-
-		SB_INFO("Creating Window {0}, ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
 		{
@@ -45,8 +40,16 @@ namespace SuperBit {
 			s_GLFWInitialized = true;
 		}
 
+		GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+		const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+		m_Data.Width = mode->width;
+		m_Data.Height = mode->height;
+		m_Data.Title = props.Title;
+
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		
+		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		
 		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();

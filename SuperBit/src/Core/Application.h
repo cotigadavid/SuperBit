@@ -34,10 +34,11 @@ namespace SuperBit {
 		void OnUpdateGameRunning(Timestep ts);
 		void OnUpdateGamePaused(Timestep ts);
 
-
 		inline static Application& Get() { return *s_Instance; }
 
 		void Close() { m_Running = false; }
+
+		void Shuffle();
 
 		void StartGame();
 		void Render();
@@ -53,7 +54,7 @@ namespace SuperBit {
 		bool OnWindowResize(WindowResizeEvent& e);
 
 	public:
-
+		float m_Ratio;
 		bool m_GameRunning = false;
 
 		Person* Player;
@@ -67,15 +68,14 @@ namespace SuperBit {
 		int nr_carti_pachet = 52 * 2;
 		int frec[53] = { 0 };
 
+		int m_Bet = 10;
+		int m_OriginalBet = 10;
 		int m_Money = 100;
 
 		Timestep endedTime;
 		Timestep gameEndedTime = -1;
 		Timestep gameStartedTime = -1;
 		Timestep timestep;
-
-		bool GameOver = false;
-		bool TurnOver = false;
 
 		std::string message;
 
@@ -87,7 +87,6 @@ namespace SuperBit {
 		bool m_Minimized = false;
 		float m_LastFrameTime = 0;
 
-		ShaderLibrary m_ShaderLibrary;
 
 		static Application* s_Instance;
 

@@ -16,8 +16,12 @@ namespace SuperBit {
 		unsigned int Width;
 		unsigned int Height;
 
-		WindowProps(const std::string& title = "SuperBit", unsigned int width = 1000, unsigned int height = 562)
-			: Title(title), Width(width), Height(height) {}
+		WindowProps(const std::string& title = "SuperBit", unsigned int width = 136, unsigned int height = 76)
+			: Title(title)
+		{
+			Width = width;
+			Height = height;
+		}
 	};
 
 	class Window

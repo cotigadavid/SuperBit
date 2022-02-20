@@ -216,42 +216,4 @@ namespace SuperBit {
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform1iv(location, count, values);
 	}
-
-	void ShaderLibrary::Add(const std::string& name, const std::shared_ptr<Shader>& shader)
-	{
-		SB_ASSERT(!Exists(name), "Shader already exists");
-		m_Shaders[name] = shader;
-	}
-
-	void ShaderLibrary::Add(const std::shared_ptr<Shader>& shader)
-	{
-		auto& name = shader->GetName();
-		Add(name, shader);
-	}
-
-	std::shared_ptr<Shader> ShaderLibrary::Load(const std::string& filepath)
-	{
-		auto shader = std::make_shared<Shader>(filepath);
-		Add(shader);
-		return shader;
-	}
-
-	std::shared_ptr<Shader> ShaderLibrary::Load(const std::string& name, const std::string& filepath)
-	{
-		auto shader = std::make_shared<Shader>(filepath);
-		Add(name, shader);
-		return shader;
-	}
-
-	std::shared_ptr<Shader> ShaderLibrary::Get(const std::string& name)
-	{
-		SB_ASSERT(Exists(name), "Shader not found");
-		return m_Shaders[name];
-	}
-
-	bool ShaderLibrary::Exists(const std::string& name) const
-	{
-		return m_Shaders.find(name) != m_Shaders.end();
-	}
-
 }

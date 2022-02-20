@@ -12,9 +12,9 @@ namespace SuperBit {
 			add += Application::Get().Player2->m_NrOfCards;
 
 		if (m_Type == 0)
-			AddCard({ 485 + m_NrOfCards * 20, 150, 0.5 + 0.005 * add });
+			AddCard({ (m_Position.x + m_NrOfCards * 20) * Application::Get().m_Ratio, 150 * Application::Get().m_Ratio, 0.5 + 0.005 * add });
 		else
-			AddCard({ 485 + m_NrOfCards * 20, 450, 0.5 + 0.005 * add });
+			AddCard({ (m_Position.x + m_NrOfCards * 20) * Application::Get().m_Ratio, 450 * Application::Get().m_Ratio, 0.5 + 0.005 * add });
 	}
 
 	void Person::AddHiddenCard()
@@ -24,9 +24,9 @@ namespace SuperBit {
 			add += Application::Get().Player2->m_NrOfCards;
 
 		if (m_Type == 0)
-			AddCard({ 485 + m_NrOfCards * 20, 150, 0.5 + 0.005 * add }, true);
+			AddCard({ (m_Position.x + m_NrOfCards * 20) * Application::Get().m_Ratio, 150 * Application::Get().m_Ratio, 0.5 + 0.005 * add }, true);
 		else
-			AddCard({ 485 + m_NrOfCards * 20, 450, 0.5 + 0.005 * add }, true);
+			AddCard({ (m_Position.x + m_NrOfCards * 20) * Application::Get().m_Ratio, 450 * Application::Get().m_Ratio, 0.5 + 0.005 * add }, true);
 	}
 
 
@@ -36,7 +36,7 @@ namespace SuperBit {
 		Application::Get().pachet.pop_back();
 
 		std::string indiceString = std::to_string(indice);
-		Card tempCard({ 845, 400, finalPosition.z }, { 96, 150 }, std::make_shared<Texture>("../assets/textures2/" + indiceString + ".png"));
+		Card tempCard({ 845 * Application::Get().m_Ratio, 400 * Application::Get().m_Ratio, finalPosition.z }, { 96 * Application::Get().m_Ratio, 150 * Application::Get().m_Ratio }, std::make_shared<Texture>("../assets/textures2/" + indiceString + ".png"));
 				
 		if (hidden)
 		{
@@ -46,8 +46,6 @@ namespace SuperBit {
 
 		tempCard.m_FinalPos = finalPosition;
 
-		if (m_Type == 0)
-			tempCard.m_FinalPos.x -= (485 - m_Position.x);
 		tempCard.m_FinalRotation = 0;
 
 		tempCard.CalculateStep();

@@ -13,6 +13,11 @@
 #include "TempGui/imgui_impl_glfw.h"
 #include "TempGui/imgui_impl_opengl3.h"
 
+
+/*
+exe file
+*/
+
 namespace SuperBit {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -20,16 +25,17 @@ namespace SuperBit {
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
-		: m_ProjectionData(0.0f, 1000.0f, 0.0f, 562.0f)
 	{
 		srand(time(NULL));
-
-		//memset(frec, 0, sizeof(frec));
 
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ProjectionData.SetProjection(0.0f, m_Window->GetWidth(), 0.0f, m_Window->GetHeight());
+
+		m_Ratio = m_Window->GetWidth() / 1000.0f;
 
 		Renderer::Init();
 
@@ -49,19 +55,7 @@ namespace SuperBit {
 		Player = new Person(0);
 		Dealer = new Person(1);
 
-		while (nr_carti_pachet > 0)
-		{
-			int x = rand() % 52;
-			if (frec[x] < 2)
-			{
-				frec[x]++;
-				nr_carti_pachet--;
-				SB_ERROR("{0}", x);
-				pachet.push_back(x);
-			}
-		}
-
-		Player->m_Position = { 485, 0 };
+		Shuffle();
 
 		CurrentPlayer = Player;
 	}
@@ -82,44 +76,46 @@ namespace SuperBit {
 			timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
-			SB_INFO("{0}", m_GameRunning);
+			if (pachet.size() < 60)
+				Shuffle();
 
 			Render();
 
 			if (m_GameRunning)
 			{
+			
 				if (gameStartedTime == -1)
 					gameStartedTime = time;
 
 				if (gameStartedTime != -1)
 				{
-					if (time - gameStartedTime > 2.5 && Dealer->m_NrOfCards == 0)
+					if (time - gameStartedTime > 1.5 && Dealer->m_NrOfCards == 0)
 						Dealer->AddCard();
-					if (time - gameStartedTime > 3.5 && Dealer->m_NrOfCards == 1)
+					if (time - gameStartedTime > 2.5 && Dealer->m_NrOfCards == 1)
 						Dealer->AddHiddenCard();
 
-					if (time - gameStartedTime > 2 && Player->m_NrOfCards == 0 && !Player2)
+					if (time - gameStartedTime > 1 && Player->m_NrOfCards == 0 && !Player2)
 						Player->AddCard();
-					if (time - gameStartedTime > 3 && Player->m_NrOfCards == 1 && !Player2)
+					if (time - gameStartedTime > 2 && Player->m_NrOfCards == 1 && !Player2)
 						Player->AddCard();
 				}
 
 				if (CurrentPlayer->m_Sum > 21 && CurrentPlayer->m_NrOfAces)
 				{
-					CurrentPlayer->m_Sum -= 11;
+					CurrentPlayer->m_Sum -= 10;
 					CurrentPlayer->m_NrOfAces--;
 				}
 
 				if (Dealer->m_Sum > 21 && Dealer->m_NrOfAces)
 				{
-					Dealer->m_Sum -= 11;
+					Dealer->m_Sum -= 10;
 					Dealer->m_NrOfAces--;
 				}
 
 				if (CurrentPlayer->m_Sum > 21 && !CurrentPlayer->GameOver)
 				{
 					endedTime = time;
-					m_Money -= CurrentPlayer->m_Bet;
+					m_Money -= m_Bet;
 					CurrentPlayer->m_Message = "Bust";
 					CurrentPlayer->GameOver = true;
 					CurrentPlayer->TurnOver = true;
@@ -159,7 +155,7 @@ namespace SuperBit {
 					{
 						if (!Player->GameOver || !Player2->GameOver)
 						{
-							if (time - endedTime > 2)
+							if (time - endedTime > 1)
 							{
 								Dealer->AddCard();
 								endedTime = time;
@@ -170,7 +166,7 @@ namespace SuperBit {
 					{
 						if (!Player->GameOver && Dealer->m_Sum < 17)
 						{
-							if (time - endedTime > 2)
+							if (time - endedTime > 1)
 							{
 								Dealer->AddCard();
 								endedTime = time;
@@ -179,18 +175,24 @@ namespace SuperBit {
 					}
 				}
 
+				if (Dealer->m_Sum > 21 && Dealer->m_NrOfAces)
+				{
+					Dealer->m_Sum -= 10;
+					Dealer->m_NrOfAces--;
+				}
+
 				if (!Player->GameOver && CurrentPlayer->TurnOver && Dealer->m_Sum >= 17)
 				{
 					Player->GameOver = true;
 					if (Dealer->m_Sum < Player->m_Sum || Dealer->m_Sum > 21)
 					{
 						Player->m_Message = "You Win";
-						m_Money += Player->m_Bet;
+						m_Money += m_Bet;
 					}
 					else if (Dealer->m_Sum > Player->m_Sum)
 					{
 						Player->m_Message = "You Lose";
-						m_Money -= Player->m_Bet;
+						m_Money -= m_Bet;
 					}
 					else if (Dealer->m_Sum == Player->m_Sum)
 						Player->m_Message = "Push";
@@ -204,12 +206,12 @@ namespace SuperBit {
 						if (Dealer->m_Sum < Player2->m_Sum || Dealer->m_Sum > 21)
 						{
 							Player2->m_Message = "You Win";
-							m_Money += Player2->m_Bet;
+							m_Money += m_Bet;
 						}
 						else if (Dealer->m_Sum > Player2->m_Sum)
 						{
 							Player2->m_Message = "You Lose";
-							m_Money -= Player2->m_Bet;
+							m_Money -= m_Bet;
 						}
 						else if (Dealer->m_Sum == Player2->m_Sum)
 							Player2->m_Message = "Push";
@@ -229,7 +231,7 @@ namespace SuperBit {
 				gameEndedTime = time;
 			}
 
-			if (gameEndedTime != -1 && time - gameEndedTime > 7)
+			if (gameEndedTime != -1 && time - gameEndedTime > 4)
 			{
 				EndGame();
 			}
@@ -250,7 +252,7 @@ namespace SuperBit {
 	{
 		ImGuiIO& io = ImGui::GetIO();
 
-		ImGui::SetNextWindowSize(ImVec2(1000, 562));
+		ImGui::SetNextWindowSize(ImVec2(m_Window->GetWidth(), m_Window->GetHeight()));
 		ImGui::SetNextWindowPos(ImVec2(0, 0));
 
 		ImGuiWindowFlags window_flags = 0;
@@ -268,8 +270,8 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.7f, 0.0f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 
-		ImGui::SetCursorPos({ 50, ImGuiLayer::CursorCenteredVertically(50) + 200 });
-		if (ImGui::Button("Hit", { 150, 75 }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
+		ImGui::SetCursorPos({ 50 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
+		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
 		{
 			CurrentPlayer->AddCard();
 		}
@@ -280,16 +282,15 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.7f, 0.0f, 0.0f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 1.0f, 0.0f, 0.0f, 1.0f });
 
-		ImGui::SetCursorPos({ 800, ImGuiLayer::CursorCenteredVertically(50) + 200 });
-		if (ImGui::Button("Stand", { 150, 75 }))
+		ImGui::SetCursorPos({ 800 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
+		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }))
 		{
-			//app.Dealer->AddCard();
 			CurrentPlayer->TurnOver = true;
 		}
 
 		if (Player->GameOver)
 		{
-			ImGui::SetCursorPos({ Player->m_Position.x - 60, ImGuiLayer::CursorCenteredVertically(0) });
+			ImGui::SetCursorPos({ (Player->m_Position.x - ImGui::CalcTextSize(Player->m_Message.c_str()).x / 2 + 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
 			ImGui::Text(Player->m_Message.c_str());
 		}
 
@@ -297,12 +298,12 @@ namespace SuperBit {
 		{
 			if (Player2->GameOver)
 			{
-				ImGui::SetCursorPos({ Player2->m_Position.x - 60, ImGuiLayer::CursorCenteredVertically(0) });
+				ImGui::SetCursorPos({ (Player2->m_Position.x - ImGui::CalcTextSize(Player2->m_Message.c_str()).x / 2 + 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
 				ImGui::Text(Player2->m_Message.c_str());
 			}
 		}
 
-		ImGui::SetCursorPos({ 730, 23 });
+		ImGui::SetCursorPos({ 730 * m_Ratio, 23 * m_Ratio });
 		std::string money = "Bank: " + std::to_string(m_Money);
 		ImGui::Text(money.c_str());
 
@@ -310,23 +311,21 @@ namespace SuperBit {
 		ImGui::PopFont();
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
-		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(125), ImGuiLayer::CursorCenteredVertically(35) - 20 });
-		if (ImGui::Button("Double", { 125, 35 }) && ((!Player2 && CurrentPlayer->m_NrOfCards == 2) || CurrentPlayer->m_NrOfCards == 1))
+		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(125 * m_Ratio), ImGuiLayer::CursorCenteredVertically(35 * m_Ratio) - 20 * m_Ratio });
+		if (ImGui::Button("Double", { 125 * m_Ratio, 35 * m_Ratio }) && ((!Player2 && CurrentPlayer->m_NrOfCards == 2) || CurrentPlayer->m_NrOfCards == 1) && m_Money >= m_Bet * 2 && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
 		{
 			CurrentPlayer->AddCard();
 			CurrentPlayer->TurnOver = true;
-			CurrentPlayer->m_Bet *= 2;
+			m_Bet *= 2;
 		}
 
-		if (ImGui::Button("Split", { 100, 100 }) /*&& Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice*/)
+		if (ImGui::Button("Split", { 100 * m_Ratio, 100 * m_Ratio }) && Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice && m_Money >= m_Bet * 2)
 		{
 			Player2 = new Person(0);
 			Player2->m_Cards.push_back(Player->m_Cards[Player->m_Cards.size() - 1]);
 			Player->m_Cards.pop_back();
 
 			Card& card = Player2->m_Cards[Player2->m_Cards.size() - 1];
-			//card.m_Pos.x = 400;
-			//card.m_FinalPos.x = 400;
 
 			Player->m_Sum -= card.m_Indice;
 			Player2->m_Sum += card.m_Indice;
@@ -345,13 +344,13 @@ namespace SuperBit {
 
 			for (auto& card : Player->m_Cards)
 			{
-				card.m_FinalPos.x = 400;
+				card.m_FinalPos.x = 400 * m_Ratio;
 				card.CalculateStep();
 			}
 
 			for (auto& card : Player2->m_Cards)
 			{
-				card.m_FinalPos.x = 600;
+				card.m_FinalPos.x = 600 * m_Ratio;
 				card.CalculateStep();
 			}
 		}
@@ -360,7 +359,7 @@ namespace SuperBit {
 		{
 			if (!Player2->GameOver)
 			{
-				ImGui::SetCursorPos({ Player2->m_Position.x - 20, ImGuiLayer::CursorCenteredVertically(25) + 30 });
+				ImGui::SetCursorPos({ (Player2->m_Position.x - 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
 				std::string PlayerSum2 = std::to_string(Player2->m_Sum);
 				ImGui::Text(PlayerSum2.c_str());
 			}
@@ -368,17 +367,33 @@ namespace SuperBit {
 
 		if (!Player->GameOver)
 		{ 
-			ImGui::SetCursorPos({ Player->m_Position.x, ImGuiLayer::CursorCenteredVertically(25) + 30});
+			ImGui::SetCursorPos({ Player->m_Position.x * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
 			std::string PlayerSum = std::to_string(Player->m_Sum);
 			ImGui::Text(PlayerSum.c_str());
 		}
 
-		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(50), 0 });
+		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(50 * m_Ratio), 0 });
 		std::string DealerSum = std::to_string(Dealer->m_Sum);
 		ImGui::Text(DealerSum.c_str());
 
 		ImGui::PopStyleVar();
 		ImGui::PopFont();
+
+		ImGui::PushFont(io.Fonts->Fonts[2]);
+		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
+		ImGui::SetCursorPos({ 850 * m_Ratio, 25 * m_Ratio });
+
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
+		if (ImGui::Button("reset", { 75 * m_Ratio, 30 * m_Ratio }))
+		{
+			m_Money = 100;
+		}
+		ImGui::PopStyleColor(3);
+		ImGui::PopStyleVar();
+		ImGui::PopFont();
+		
 		ImGui::End();
 	}
 
@@ -386,7 +401,7 @@ namespace SuperBit {
 	{
 		ImGuiIO& io = ImGui::GetIO();
 
-		ImGui::SetNextWindowSize(ImVec2(1000, 562));
+		ImGui::SetNextWindowSize(ImVec2(m_Window->GetWidth(), m_Window->GetHeight()));
 		ImGui::SetNextWindowPos(ImVec2(0, 0));
 
 		ImGuiWindowFlags window_flags = 0;
@@ -404,14 +419,17 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.7f, 0.0f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 
-		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(100), ImGuiLayer::CursorCenteredVertically(50) });
+		ImGui::SetCursorPos({ 730 * m_Ratio, 23 * m_Ratio });
+		std::string money = "Bank: " + std::to_string(m_Money);
+		ImGui::Text(money.c_str());
 
-		if (ImGui::Button("Play", { 100, 50 }))
+		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(100 * m_Ratio), ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) - 100 * m_Ratio });
+
+		if (ImGui::Button("Play", { 100 * m_Ratio, 50 * m_Ratio }) && m_OriginalBet && m_OriginalBet <= m_Money)
 		{
 			StartGame();
 		}
 
-		ImGui::PopFont();
 		ImGui::PopStyleVar();
 		ImGui::PopStyleColor(3);
 
@@ -419,14 +437,42 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.0f, 0.0f, 0.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 0.0f });
 
-		ImGui::SetCursorPosX(330);
-		ImGui::ImageButton((void*)Chip1->GetRendererID(), ImVec2(50, 50));
-		ImGui::SameLine(); ImGui::ImageButton((void*)Chip5->GetRendererID(), ImVec2(50, 50));
-		ImGui::SameLine(); ImGui::ImageButton((void*)Chip20->GetRendererID(), ImVec2(50, 50));
-		ImGui::SameLine(); ImGui::ImageButton((void*)Chip100->GetRendererID(), ImVec2(50, 50));
-		ImGui::SameLine(); ImGui::ImageButton((void*)Chip500->GetRendererID(), ImVec2(50, 50));
+		ImGui::SetCursorPosX(350 * m_Ratio);
+						   if (ImGui::ImageButton((void*)Chip1->GetRendererID(), ImVec2(50 * m_Ratio, 50 * m_Ratio))) m_OriginalBet += 1;
+		ImGui::SameLine(); if (ImGui::ImageButton((void*)Chip5->GetRendererID(), ImVec2(50 * m_Ratio, 50 * m_Ratio))) m_OriginalBet += 5;
+		ImGui::SameLine(); if (ImGui::ImageButton((void*)Chip20->GetRendererID(), ImVec2(50 * m_Ratio, 50 * m_Ratio))) m_OriginalBet += 20;
+		ImGui::SameLine(); if (ImGui::ImageButton((void*)Chip100->GetRendererID(), ImVec2(50 * m_Ratio, 50 * m_Ratio))) m_OriginalBet += 100;
+		ImGui::SameLine(); if (ImGui::ImageButton((void*)Chip500->GetRendererID(), ImVec2(50 * m_Ratio, 50 * m_Ratio))) m_OriginalBet += 500;
 
 		ImGui::PopStyleColor(3);
+		
+		std::string bet = std::to_string(m_OriginalBet);
+		ImGui::SetCursorPosX((ImGui::GetWindowSize().x - ImGui::CalcTextSize(bet.c_str()).x) / 2);
+		ImGui::Text(bet.c_str());
+
+		ImGui::PopFont();
+		ImGui::PushFont(io.Fonts->Fonts[2]);
+		ImGui::SetCursorPosX(ImGuiLayer::CursorCenteredHorizontally(75 * m_Ratio));
+		if (ImGui::Button("reset", { 75 * m_Ratio, 30 * m_Ratio }))
+		{
+			m_OriginalBet = 0;
+		}
+		ImGui::PopFont();
+
+		ImGui::PushFont(io.Fonts->Fonts[2]);
+		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
+		ImGui::SetCursorPos({ 850 * m_Ratio, 25 * m_Ratio });
+
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
+		if (ImGui::Button("reset##f", { 75 * m_Ratio, 30 * m_Ratio }))
+		{
+			m_Money = 100;
+		}
+		ImGui::PopStyleColor(3);
+		ImGui::PopStyleVar();
+		ImGui::PopFont();
 
 		ImGui::End();
 	}
@@ -435,13 +481,41 @@ namespace SuperBit {
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
-		//dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+	}
 
+	void Application::Shuffle()
+	{
+		pachet.clear();
+		nr_carti_pachet = 104;
+		memset(frec, 0, sizeof(frec));
+		while (nr_carti_pachet > 52)
+		{
+			int x = rand() % 52;
+			if (frec[x] < 1)
+			{
+				frec[x]++;
+				nr_carti_pachet--;
+				SB_ERROR("{0}", x);
+				pachet.push_back(x);
+			}
+		}
+		while (nr_carti_pachet > 0)
+		{
+			int x = rand() % 52;
+			if (frec[x] < 2)
+			{
+				frec[x]++;
+				nr_carti_pachet--;
+				SB_ERROR("{0}", x);
+				pachet.push_back(x);
+			}
+		}
 	}
 
 	void Application::StartGame()
 	{
 		m_GameRunning = true;
+		m_Bet = m_OriginalBet;
 		gameEndedTime = -1;
 	}
 
@@ -477,7 +551,6 @@ namespace SuperBit {
 					card.m_Rotation += card.stepR * 0.016;
 					card.nrOfSteps--;
 				}
-
 			}
 		}
 
@@ -495,10 +568,16 @@ namespace SuperBit {
 
 		for (int i = 0; i <= 5; ++i)
 		{
-			Renderer2D::DrawQuad({ 845 - i * 5, 400, 0 + 0.990 + i * 0.001 }, { 96, 150 }, back);
+			Renderer2D::DrawQuad({ (845 - i * 5) * m_Ratio, 400 * m_Ratio, 0.990 + i * 0.001 }, { 96 * m_Ratio, 150 * m_Ratio }, back);
 		}
 
-		Renderer2D::DrawQuad({ 181, 517, 1 }, { 666 / 3, 375 / 3 }, logo);
+		Renderer2D::DrawQuad({ 181 * m_Ratio, 517 * m_Ratio, 1 }, { 666 / 3 * m_Ratio, 375 / 3 * m_Ratio }, logo);
+
+		//FLUSH
+		for (int i = 0; i < 10; ++i)
+			Renderer2D::DrawQuad({ 181 * m_Ratio, 517 * m_Ratio, 1 }, { 666 / 3 * m_Ratio, 375 / 3 * m_Ratio }, { 0, 0, 0, 0});
+		//FLUSH
+
 		Renderer2D::EndScene();
 	}
 
@@ -506,15 +585,18 @@ namespace SuperBit {
 	{
 		m_GameRunning = false;
 		gameStartedTime = -1;
+		gameEndedTime = -1;
 
-		delete Player2;
-		delete Player;
-		delete Dealer;
+		if (Player2)
+			delete Player2;
+		Player2 = nullptr;
+		if (Player)
+			delete Player;
+		if (Dealer)
+			delete Dealer;
 
 		Player = new Person(0);
 		Dealer = new Person(1);
-
-		Player->m_Position = { 485, 0 };
 
 		CurrentPlayer = Player;
 	}
@@ -547,5 +629,4 @@ namespace SuperBit {
 
 		return false;
 	}
-
 }

@@ -7,6 +7,7 @@ namespace SuperBit {
 	class ProjectionData
 	{
 	public:
+		ProjectionData();
 		ProjectionData(float left, float right, float bottom, float top);
 
 		void SetProjection(float left, float right, float bottom, float top);
