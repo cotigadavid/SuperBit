@@ -22,7 +22,7 @@ namespace SuperBit
 		std::vector<Card> m_Cards;
 		std::string m_Message;
 
-		glm::vec2 m_Position = { 485, 0 };
+		glm::vec2 m_Position = { 500, 0 };
 
 		bool GameOver = false;
 		bool TurnOver = false;

@@ -9,14 +9,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "TempGui/imgui.h"
-
 #include "TempGui/imgui_impl_glfw.h"
 #include "TempGui/imgui_impl_opengl3.h"
 
-
-/*
-exe file
-*/
+#include "Input.h"
+#include "KeyCodes.h"
 
 namespace SuperBit {
 
@@ -42,9 +39,10 @@ namespace SuperBit {
 		m_ImguiLayer = new ImGuiLayer();
 		m_ImguiLayer->OnAttach();
 
-		background = std::make_shared<Texture>("../assets/textures/background2.png");
+		background = std::make_shared<Texture>("../assets/textures/background3.png");
 		logo = std::make_shared<Texture>("../assets/textures/1.png");
 		back = std::make_shared<Texture>("../assets/textures2/back_red.png");
+		front = std::make_shared<Texture>("../assets/textures/1x/front.jpg");
 
 		Chip1 = std::make_shared<Texture>("../assets/textures/RedChip.png");
 		Chip5 = std::make_shared<Texture>("../assets/textures/YellowChip.png");
@@ -268,19 +266,13 @@ namespace SuperBit {
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.7f, 0.0f, 1.0f });
-		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 
 		ImGui::SetCursorPos({ 50 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
 		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
 		{
 			CurrentPlayer->AddCard();
 		}
-
-		ImGui::PopStyleColor(3);
-
-		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.0f, 0.0f, 1.0f });
-		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.7f, 0.0f, 0.0f, 1.0f });
-		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 1.0f, 0.0f, 0.0f, 1.0f });
 
 		ImGui::SetCursorPos({ 800 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
 		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }))
@@ -290,7 +282,7 @@ namespace SuperBit {
 
 		if (Player->GameOver)
 		{
-			ImGui::SetCursorPos({ (Player->m_Position.x - ImGui::CalcTextSize(Player->m_Message.c_str()).x / 2 + 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
+			ImGui::SetCursorPos({ (Player->m_Position.x - ImGui::CalcTextSize(Player->m_Message.c_str()).x / 2 + 50) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
 			ImGui::Text(Player->m_Message.c_str());
 		}
 
@@ -298,7 +290,7 @@ namespace SuperBit {
 		{
 			if (Player2->GameOver)
 			{
-				ImGui::SetCursorPos({ (Player2->m_Position.x - ImGui::CalcTextSize(Player2->m_Message.c_str()).x / 2 + 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
+				ImGui::SetCursorPos({ (Player2->m_Position.x - ImGui::CalcTextSize(Player2->m_Message.c_str()).x / 2 + 50) * m_Ratio, ImGuiLayer::CursorCenteredVertically(0) });
 				ImGui::Text(Player2->m_Message.c_str());
 			}
 		}
@@ -319,7 +311,11 @@ namespace SuperBit {
 			m_Bet *= 2;
 		}
 
-		if (ImGui::Button("Split", { 100 * m_Ratio, 100 * m_Ratio }) && Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice && m_Money >= m_Bet * 2)
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.0f, 0.0f, 0.5f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.0f, 0.7f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.0f, 0.5f, 1.0f });
+
+		if (ImGui::Button("Split", { 75 * m_Ratio, 75 * m_Ratio })/* && Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice */&& m_Money >= m_Bet * 2)
 		{
 			Player2 = new Person(0);
 			Player2->m_Cards.push_back(Player->m_Cards[Player->m_Cards.size() - 1]);
@@ -355,24 +351,36 @@ namespace SuperBit {
 			}
 		}
 
+		ImGui::PopStyleColor(3);
+
 		if (Player2)
 		{
 			if (!Player2->GameOver)
 			{
-				ImGui::SetCursorPos({ (Player2->m_Position.x - 20) * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
+				ImGui::SetCursorPos({ (Player2->m_Position.x - 6) * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
 				std::string PlayerSum2 = std::to_string(Player2->m_Sum);
 				ImGui::Text(PlayerSum2.c_str());
 			}
+
+			if (!Player->GameOver)
+			{
+				ImGui::SetCursorPos({ (Player->m_Position.x - 8) * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
+				std::string PlayerSum = std::to_string(Player->m_Sum);
+				ImGui::Text(PlayerSum.c_str());
+			}
 		}
 
-		if (!Player->GameOver)
-		{ 
-			ImGui::SetCursorPos({ Player->m_Position.x * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
-			std::string PlayerSum = std::to_string(Player->m_Sum);
-			ImGui::Text(PlayerSum.c_str());
+		else
+		{
+			if (!Player->GameOver)
+			{
+				ImGui::SetCursorPos({ (Player->m_Position.x  - 6) * m_Ratio, ImGuiLayer::CursorCenteredVertically(25 * m_Ratio) + 30 * m_Ratio });
+				std::string PlayerSum = std::to_string(Player->m_Sum);
+				ImGui::Text(PlayerSum.c_str());
+			}
 		}
 
-		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(50 * m_Ratio), 0 });
+		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(10 * m_Ratio), 0 });
 		std::string DealerSum = std::to_string(Dealer->m_Sum);
 		ImGui::Text(DealerSum.c_str());
 
@@ -381,12 +389,12 @@ namespace SuperBit {
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
-		ImGui::SetCursorPos({ 850 * m_Ratio, 25 * m_Ratio });
+		ImGui::SetCursorPos({ 860 * m_Ratio, 25 * m_Ratio });
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
-		if (ImGui::Button("reset", { 75 * m_Ratio, 30 * m_Ratio }))
+		if (ImGui::Button("reset", { 65 * m_Ratio, 30 * m_Ratio }))
 		{
 			m_Money = 100;
 		}
@@ -417,7 +425,7 @@ namespace SuperBit {
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.7f, 0.0f, 1.0f });
-		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 
 		ImGui::SetCursorPos({ 730 * m_Ratio, 23 * m_Ratio });
 		std::string money = "Bank: " + std::to_string(m_Money);
@@ -461,12 +469,12 @@ namespace SuperBit {
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
-		ImGui::SetCursorPos({ 850 * m_Ratio, 25 * m_Ratio });
+		ImGui::SetCursorPos({ 860 * m_Ratio, 25 * m_Ratio });
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
-		if (ImGui::Button("reset##f", { 75 * m_Ratio, 30 * m_Ratio }))
+		if (ImGui::Button("reset##f", { 65 * m_Ratio, 30 * m_Ratio }))
 		{
 			m_Money = 100;
 		}
@@ -522,6 +530,12 @@ namespace SuperBit {
 	void Application::Render()
 	{
 		Renderer2D::BeginScene(m_ProjectionData);
+
+		if (Input::IsKeyPressed(Key::Y))
+		{
+			SB_ERROR("AFAGG");
+			Renderer2D::DrawQuad({ 200, 200, 0.9999999 }, { 200, 200 }, front);
+		}
 
 		Renderer2D::DrawQuad({ m_Window->GetWidth() / 2, m_Window->GetHeight() / 2, 0 }, { m_Window->GetWidth(), m_Window->GetHeight() }, background);
 

@@ -16,7 +16,6 @@
 #include "ProjectionData.h"
 
 #include "Game/Card.h"
-
 #include "Game/Person.h"
 
 namespace SuperBit {
@@ -93,6 +92,7 @@ namespace SuperBit {
 		std::shared_ptr<Texture> background;
 		std::shared_ptr<Texture> logo;
 		std::shared_ptr<Texture> back;
+		std::shared_ptr<Texture> front;
 		
 		std::shared_ptr<Texture> Chip1;
 		std::shared_ptr<Texture> Chip5;
