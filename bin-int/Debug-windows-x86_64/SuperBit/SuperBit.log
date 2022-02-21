@@ -116,4 +116,639 @@ D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(609,5): warning C4996: '
   main.cpp
   stb_image.cpp
   Generating Code...
-  SuperBit.vcxproj -> D:\SuperBit\bin\Debug-windows-x86_64\SuperBit\SuperBit.exe
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _invalid_parameter
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _invalid_parameter
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _invalid_parameter
+VertexArray.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Window.obj : error LNK2001: unresolved external symbol _invalid_parameter
+libcpmtd.lib(xtime.obj) : error LNK2001: unresolved external symbol _invalid_parameter
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol _invalid_parameter
+Renderer.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Renderer2D.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Shader.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Texture.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Application.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Log.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Person.obj : error LNK2001: unresolved external symbol _invalid_parameter
+Buffer.obj : error LNK2001: unresolved external symbol _invalid_parameter
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+LIBCMTD.lib(init.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+VertexArray.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Window.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(xtime.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol _CrtDbgReport
+Renderer.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Renderer2D.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Shader.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Texture.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Application.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Log.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Person.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Buffer.obj : error LNK2001: unresolved external symbol _CrtDbgReport
+Application.obj : error LNK2019: unresolved external symbol srand referenced in function "public: __cdecl SuperBit::Application::Application(void)" (??0Application@SuperBit@@QEAA@XZ)
+Application.obj : error LNK2019: unresolved external symbol rand referenced in function "public: void __cdecl SuperBit::Application::Shuffle(void)" (?Shuffle@Application@SuperBit@@QEAAXXZ)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(xstrxfrm.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol memcpy
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol memcpy
+GLFW.lib(win32_monitor.obj) : error LNK2001: unresolved external symbol memcpy
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol memcpy
+imgui_tables.obj : error LNK2001: unresolved external symbol memcpy
+imgui_widgets.obj : error LNK2001: unresolved external symbol memcpy
+Window.obj : error LNK2001: unresolved external symbol memcpy
+stb_image.obj : error LNK2001: unresolved external symbol memcpy
+imgui_demo.obj : error LNK2001: unresolved external symbol memcpy
+imgui_draw.obj : error LNK2001: unresolved external symbol memcpy
+imgui_impl_glfw.obj : error LNK2001: unresolved external symbol memcpy
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol memcpy
+Renderer2D.obj : error LNK2001: unresolved external symbol memcpy
+Shader.obj : error LNK2001: unresolved external symbol memcpy
+Texture.obj : error LNK2001: unresolved external symbol memcpy
+imgui.obj : error LNK2001: unresolved external symbol memcpy
+Application.obj : error LNK2001: unresolved external symbol memcpy
+Log.obj : error LNK2001: unresolved external symbol memcpy
+Person.obj : error LNK2001: unresolved external symbol memcpy
+Renderer.obj : error LNK2001: unresolved external symbol memcpy
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol memmove
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol memmove
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol memmove
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol memmove
+imgui_draw.obj : error LNK2001: unresolved external symbol memmove
+imgui_widgets.obj : error LNK2001: unresolved external symbol memmove
+Window.obj : error LNK2001: unresolved external symbol memmove
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol memmove
+Renderer2D.obj : error LNK2001: unresolved external symbol memmove
+Shader.obj : error LNK2001: unresolved external symbol memmove
+imgui.obj : error LNK2001: unresolved external symbol memmove
+imgui_demo.obj : error LNK2001: unresolved external symbol memmove
+Application.obj : error LNK2001: unresolved external symbol memmove
+Log.obj : error LNK2001: unresolved external symbol memmove
+Person.obj : error LNK2001: unresolved external symbol memmove
+Renderer.obj : error LNK2001: unresolved external symbol memmove
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(win32_monitor.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(wgl_context.obj) : error LNK2001: unresolved external symbol memset
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol memset
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(win32_window.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(win32_thread.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(win32_init.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol memset
+GLFW.lib(window.obj) : error LNK2001: unresolved external symbol memset
+imgui_tables.obj : error LNK2001: unresolved external symbol memset
+imgui_widgets.obj : error LNK2001: unresolved external symbol memset
+Window.obj : error LNK2001: unresolved external symbol memset
+stb_image.obj : error LNK2001: unresolved external symbol memset
+imgui_demo.obj : error LNK2001: unresolved external symbol memset
+imgui_draw.obj : error LNK2001: unresolved external symbol memset
+imgui_impl_glfw.obj : error LNK2001: unresolved external symbol memset
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol memset
+Application.obj : error LNK2001: unresolved external symbol memset
+Log.obj : error LNK2001: unresolved external symbol memset
+Shader.obj : error LNK2001: unresolved external symbol memset
+imgui.obj : error LNK2001: unresolved external symbol memset
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+LIBCMTD.lib(throw_bad_alloc.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+VertexArray.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Window.obj : error LNK2001: unresolved external symbol __std_exception_copy
+libcpmtd.lib(xthrow.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol __std_exception_copy
+Renderer.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Renderer2D.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Shader.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Texture.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Application.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Log.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Person.obj : error LNK2001: unresolved external symbol __std_exception_copy
+Buffer.obj : error LNK2001: unresolved external symbol __std_exception_copy
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+LIBCMTD.lib(throw_bad_alloc.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+VertexArray.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Window.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+libcpmtd.lib(xthrow.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol __std_exception_destroy
+Renderer.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Renderer2D.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Shader.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Texture.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Application.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Log.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Person.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Buffer.obj : error LNK2001: unresolved external symbol __std_exception_destroy
+Application.obj : error LNK2019: unresolved external symbol _time64 referenced in function time
+GLFW.lib(osmesa_context.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(vulkan.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(win32_thread.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(wgl_context.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(egl_context.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol _wassert
+GLFW.lib(window.obj) : error LNK2001: unresolved external symbol _wassert
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol _wassert
+imgui_tables.obj : error LNK2001: unresolved external symbol _wassert
+imgui_widgets.obj : error LNK2001: unresolved external symbol _wassert
+stb_image.obj : error LNK2001: unresolved external symbol _wassert
+imgui.obj : error LNK2001: unresolved external symbol _wassert
+imgui_demo.obj : error LNK2001: unresolved external symbol _wassert
+imgui_draw.obj : error LNK2001: unresolved external symbol _wassert
+imgui_impl_glfw.obj : error LNK2001: unresolved external symbol _wassert
+Application.obj : error LNK2001: unresolved external symbol _wassert
+ProjectionData.obj : error LNK2001: unresolved external symbol _wassert
+Renderer2D.obj : error LNK2001: unresolved external symbol _wassert
+Shader.obj : error LNK2001: unresolved external symbol _wassert
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+LIBCMTD.lib(throw_bad_alloc.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+VertexArray.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Window.obj : error LNK2001: unresolved external symbol _CxxThrowException
+libcpmtd.lib(xthrow.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol _CxxThrowException
+Renderer.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Renderer2D.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Shader.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Texture.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Application.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Log.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Person.obj : error LNK2001: unresolved external symbol _CxxThrowException
+Buffer.obj : error LNK2001: unresolved external symbol _CxxThrowException
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+LIBCMTD.lib(gshandlereh4.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(ios.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(iosptrs.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Window.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+main.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_impl_glfw.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_tables.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_widgets.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+VertexArray.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_demo.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+imgui_draw.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Renderer.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Renderer2D.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Shader.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Texture.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Application.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Log.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Person.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+Buffer.obj : error LNK2001: unresolved external symbol __CxxFrameHandler4
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _purecall
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _purecall
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _purecall
+Log.obj : error LNK2001: unresolved external symbol _purecall
+Shader.obj : error LNK2001: unresolved external symbol _purecall
+Window.obj : error LNK2001: unresolved external symbol _purecall
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol _purecall
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+Log.obj : error LNK2001: unresolved external symbol _calloc_dbg
+Window.obj : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(mutex.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+libcpmtd.lib(cond.obj) : error LNK2001: unresolved external symbol _calloc_dbg
+LIBCMTD.lib(delete_scalar.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(cond.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol _free_dbg
+Log.obj : error LNK2001: unresolved external symbol _free_dbg
+Shader.obj : error LNK2001: unresolved external symbol _free_dbg
+Window.obj : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(mutex.obj) : error LNK2001: unresolved external symbol _free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+Log.obj : error LNK2001: unresolved external symbol _malloc_dbg
+Shader.obj : error LNK2001: unresolved external symbol _malloc_dbg
+Window.obj : error LNK2001: unresolved external symbol _malloc_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol _malloc_dbg
+Log.obj : error LNK2019: unresolved external symbol _dsign referenced in function "bool __cdecl signbit(double)" (?signbit@@YA_NN@Z)
+Log.obj : error LNK2019: unresolved external symbol _ldsign referenced in function "bool __cdecl signbit(long double)" (?signbit@@YA_NO@Z)
+Log.obj : error LNK2019: unresolved external symbol _fdsign referenced in function "bool __cdecl signbit(float)" (?signbit@@YA_NM@Z)
+Log.obj : error LNK2019: unresolved external symbol _dtest referenced in function "int __cdecl fpclassify(double)" (?fpclassify@@YAHN@Z)
+Log.obj : error LNK2019: unresolved external symbol _ldtest referenced in function "int __cdecl fpclassify(long double)" (?fpclassify@@YAHO@Z)
+Log.obj : error LNK2019: unresolved external symbol _fdtest referenced in function "int __cdecl fpclassify(float)" (?fpclassify@@YAHM@Z)
+Log.obj : error LNK2019: unresolved external symbol ceilf referenced in function "protected: unsigned __int64 __cdecl std::_Hash<class std::_Umap_traits<char,class std::unique_ptr<class spdlog::custom_flag_formatter,struct std::default_delete<class spdlog::custom_flag_formatter> >,class std::_Uhash_compare<char,struct std::hash<char>,struct std::equal_to<char> >,class std::allocator<struct std::pair<char const ,class std::unique_ptr<class spdlog::custom_flag_formatter,struct std::default_delete<class spdlog::custom_flag_formatter> > > >,0> >::_Min_load_factor_buckets(unsigned __int64)const " (?_Min_load_factor_buckets@?$_Hash@V?$_Umap_traits@DV?$unique_ptr@Vcustom_flag_formatter@spdlog@@U?$default_delete@Vcustom_flag_formatter@spdlog@@@std@@@std@@V?$_Uhash_compare@DU?$hash@D@std@@U?$equal_to@D@2@@2@V?$allocator@U?$pair@$$CBDV?$unique_ptr@Vcustom_flag_formatter@spdlog@@U?$default_delete@Vcustom_flag_formatter@spdlog@@@std@@@std@@@std@@@2@$0A@@std@@@std@@IEBA_K_K@Z)
+Shader.obj : error LNK2001: unresolved external symbol ceilf
+imgui_draw.obj : error LNK2001: unresolved external symbol ceilf
+libcpmtd.lib(ios.obj) : error LNK2001: unresolved external symbol free
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol free
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol free
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(egl_context.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(osmesa_context.obj) : error LNK2001: unresolved external symbol free
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol free
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(win32_init.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(win32_monitor.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(wgl_context.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(window.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(win32_window.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(vulkan.obj) : error LNK2001: unresolved external symbol free
+Window.obj : error LNK2001: unresolved external symbol free
+stb_image.obj : error LNK2001: unresolved external symbol free
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol free
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol free
+Log.obj : error LNK2001: unresolved external symbol free
+Shader.obj : error LNK2001: unresolved external symbol free
+imgui.obj : error LNK2001: unresolved external symbol free
+imgui_demo.obj : error LNK2001: unresolved external symbol free
+libcpmtd.lib(xstoull.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xmbtowc.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xwcscoll.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xstol.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xstoul.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xstoll.obj) : error LNK2001: unresolved external symbol _errno
+Log.obj : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(xwctomb.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol _errno
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol _errno
+Log.obj : error LNK2019: unresolved external symbol __acrt_iob_func referenced in function "void __cdecl fmt::v8::detail::assert_fail(char const *,int,char const *)" (?assert_fail@detail@v8@fmt@@YAXPEBDH0@Z)
+imgui.obj : error LNK2001: unresolved external symbol __acrt_iob_func
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol __acrt_iob_func
+libcpmtd.lib(mutex.obj) : error LNK2001: unresolved external symbol __acrt_iob_func
+Log.obj : error LNK2019: unresolved external symbol __stdio_common_vfprintf referenced in function _vfprintf_l
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol __stdio_common_vfprintf
+Log.obj : error LNK2019: unresolved external symbol __stdio_common_vsnprintf_s referenced in function _vsnprintf_s_l
+libcpmtd.lib(xstoul.obj) : error LNK2001: unresolved external symbol memchr
+libcpmtd.lib(xstoull.obj) : error LNK2001: unresolved external symbol memchr
+imgui_draw.obj : error LNK2001: unresolved external symbol memchr
+imgui_widgets.obj : error LNK2001: unresolved external symbol memchr
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol memchr
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol memchr
+Log.obj : error LNK2001: unresolved external symbol memchr
+Shader.obj : error LNK2001: unresolved external symbol memchr
+imgui.obj : error LNK2001: unresolved external symbol memchr
+imgui_demo.obj : error LNK2001: unresolved external symbol memchr
+    Hint on symbols that are defined and could potentially match:
+      "void * __cdecl memchr(void *,int,unsigned __int64)" (?memchr@@YAPEAXPEAXH_K@Z)
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol memcmp
+imgui_demo.obj : error LNK2001: unresolved external symbol memcmp
+imgui_draw.obj : error LNK2001: unresolved external symbol memcmp
+imgui_widgets.obj : error LNK2001: unresolved external symbol memcmp
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol memcmp
+Log.obj : error LNK2001: unresolved external symbol memcmp
+Log.obj : error LNK2001: unresolved external symbol memcmp
+Shader.obj : error LNK2001: unresolved external symbol memcmp
+imgui.obj : error LNK2001: unresolved external symbol memcmp
+Log.obj : error LNK2019: unresolved external symbol strrchr referenced in function "public: static char const * __cdecl spdlog::details::short_filename_formatter<struct spdlog::details::null_scoped_padder>::basename(char const *)" (?basename@?$short_filename_formatter@Unull_scoped_padder@details@spdlog@@@details@spdlog@@SAPEBDPEBD@Z)
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol strlen
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol strlen
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol strlen
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol strlen
+Window.obj : error LNK2001: unresolved external symbol strlen
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol strlen
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol strlen
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol strlen
+imgui_draw.obj : error LNK2001: unresolved external symbol strlen
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol strlen
+imgui_tables.obj : error LNK2001: unresolved external symbol strlen
+imgui_widgets.obj : error LNK2001: unresolved external symbol strlen
+Log.obj : error LNK2001: unresolved external symbol strlen
+Shader.obj : error LNK2001: unresolved external symbol strlen
+imgui.obj : error LNK2001: unresolved external symbol strlen
+imgui_demo.obj : error LNK2001: unresolved external symbol strlen
+Log.obj : error LNK2019: unresolved external symbol terminate referenced in function "public: __cdecl std::thread::~thread(void)" (??1thread@std@@QEAA@XZ)
+libcpmtd.lib(cond.obj) : error LNK2001: unresolved external symbol terminate
+LIBCMTD.lib(ehvecdtr.obj) : error LNK2001: unresolved external symbol terminate
+LIBCMTD.lib(utility_desktop.obj) : error LNK2001: unresolved external symbol terminate
+Log.obj : error LNK2019: unresolved external symbol _gmtime64_s referenced in function gmtime_s
+Log.obj : error LNK2019: unresolved external symbol _localtime64_s referenced in function localtime_s
+Log.obj : error LNK2019: unresolved external symbol strftime referenced in function "protected: void __cdecl spdlog::logger::err_handler_(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?err_handler_@logger@spdlog@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Log.obj : error LNK2019: unresolved external symbol isdigit referenced in function "private: static struct spdlog::details::padding_info __cdecl spdlog::pattern_formatter::handle_padspec_(class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char> > > &,class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char> > >)" (?handle_padspec_@pattern_formatter@spdlog@@CA?AUpadding_info@details@2@AEAV?$_String_const_iterator@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@V56@@Z)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol localeconv
+Log.obj : error LNK2001: unresolved external symbol localeconv
+Window.obj : error LNK2001: unresolved external symbol localeconv
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol localeconv
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol localeconv
+imgui_widgets.obj : error LNK2001: unresolved external symbol cosf
+ProjectionData.obj : error LNK2001: unresolved external symbol cosf
+Renderer2D.obj : error LNK2001: unresolved external symbol cosf
+imgui_demo.obj : error LNK2001: unresolved external symbol cosf
+imgui_draw.obj : error LNK2001: unresolved external symbol cosf
+imgui_widgets.obj : error LNK2001: unresolved external symbol sinf
+ProjectionData.obj : error LNK2001: unresolved external symbol sinf
+Renderer2D.obj : error LNK2001: unresolved external symbol sinf
+imgui_demo.obj : error LNK2001: unresolved external symbol sinf
+imgui_draw.obj : error LNK2001: unresolved external symbol sinf
+ProjectionData.obj : error LNK2019: unresolved external symbol sqrtf referenced in function "float __cdecl sqrt(float)" (?sqrt@@YAMM@Z)
+Renderer2D.obj : error LNK2001: unresolved external symbol sqrtf
+imgui.obj : error LNK2001: unresolved external symbol sqrtf
+imgui_draw.obj : error LNK2001: unresolved external symbol sqrtf
+Shader.obj : error LNK2019: unresolved external symbol _get_stream_buffer_pointers referenced in function "protected: void __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::_Init(struct _iobuf *,enum std::basic_filebuf<char,struct std::char_traits<char> >::_Initfl)" (?_Init@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IEAAXPEAU_iobuf@@W4_Initfl@12@@Z)
+Shader.obj : error LNK2019: unresolved external symbol fclose referenced in function "public: class std::basic_filebuf<char,struct std::char_traits<char> > * __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::close(void)" (?close@?$basic_filebuf@DU?$char_traits@D@std@@@std@@QEAAPEAV12@XZ)
+imgui.obj : error LNK2001: unresolved external symbol fclose
+stb_image.obj : error LNK2001: unresolved external symbol fclose
+libcpmtd.lib(fiopen.obj) : error LNK2001: unresolved external symbol fclose
+Shader.obj : error LNK2019: unresolved external symbol fflush referenced in function "protected: virtual int __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::sync(void)" (?sync@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAAHXZ)
+imgui.obj : error LNK2001: unresolved external symbol fflush
+Shader.obj : error LNK2019: unresolved external symbol fgetc referenced in function "bool __cdecl std::_Fgetc<char>(char &,struct _iobuf *)" (??$_Fgetc@D@std@@YA_NAEADPEAU_iobuf@@@Z)
+Shader.obj : error LNK2019: unresolved external symbol fgetpos referenced in function "protected: virtual class std::fpos<struct _Mbstatet> __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::seekoff(__int64,int,int)" (?seekoff@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@_JHH@Z)
+Shader.obj : error LNK2019: unresolved external symbol fputc referenced in function "bool __cdecl std::_Fputc<char>(char,struct _iobuf *)" (??$_Fputc@D@std@@YA_NDPEAU_iobuf@@@Z)
+libcpmtd.lib(mutex.obj) : error LNK2001: unresolved external symbol fputc
+Shader.obj : error LNK2019: unresolved external symbol fread referenced in function "protected: virtual __int64 __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::xsgetn(char *,__int64)" (?xsgetn@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z)
+imgui.obj : error LNK2001: unresolved external symbol fread
+stb_image.obj : error LNK2001: unresolved external symbol fread
+Shader.obj : error LNK2019: unresolved external symbol fsetpos referenced in function "protected: virtual class std::fpos<struct _Mbstatet> __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::seekpos(class std::fpos<struct _Mbstatet>,int)" (?seekpos@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@V32@H@Z)
+Shader.obj : error LNK2019: unresolved external symbol _fseeki64 referenced in function "protected: virtual class std::fpos<struct _Mbstatet> __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::seekoff(__int64,int,int)" (?seekoff@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@_JHH@Z)
+Shader.obj : error LNK2019: unresolved external symbol fwrite referenced in function "protected: bool __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::_Endwrite(void)" (?_Endwrite@?$basic_filebuf@DU?$char_traits@D@std@@@std@@IEAA_NXZ)
+imgui.obj : error LNK2001: unresolved external symbol fwrite
+Shader.obj : error LNK2019: unresolved external symbol setvbuf referenced in function "protected: virtual class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::setbuf(char *,__int64)" (?setbuf@?$basic_filebuf@DU?$char_traits@D@std@@@std@@MEAAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@PEAD_J@Z)
+Shader.obj : error LNK2019: unresolved external symbol ungetc referenced in function "bool __cdecl std::_Ungetc<char>(char const &,struct _iobuf *)" (??$_Ungetc@D@std@@YA_NAEBDPEAU_iobuf@@@Z)
+Shader.obj : error LNK2019: unresolved external symbol _lock_file referenced in function "public: virtual void __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::_Lock(void)" (?_Lock@?$basic_filebuf@DU?$char_traits@D@std@@@std@@UEAAXXZ)
+Shader.obj : error LNK2019: unresolved external symbol _unlock_file referenced in function "public: virtual void __cdecl std::basic_filebuf<char,struct std::char_traits<char> >::_Unlock(void)" (?_Unlock@?$basic_filebuf@DU?$char_traits@D@std@@@std@@UEAAXXZ)
+Window.obj : error LNK2001: unresolved external symbol fabs
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol fabs
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol fabs
+imgui.obj : error LNK2001: unresolved external symbol fabs
+imgui_demo.obj : error LNK2001: unresolved external symbol fabs
+imgui_draw.obj : error LNK2001: unresolved external symbol fabs
+imgui_widgets.obj : error LNK2001: unresolved external symbol fabs
+imgui.obj : error LNK2019: unresolved external symbol fmodf referenced in function "void __cdecl ImGui::ColorConvertHSVtoRGB(float,float,float,float &,float &,float &)" (?ColorConvertHSVtoRGB@ImGui@@YAXMMMAEAM00@Z)
+imgui_demo.obj : error LNK2001: unresolved external symbol fmodf
+imgui_widgets.obj : error LNK2001: unresolved external symbol fmodf
+LIBCMTD.lib(new_scalar.obj) : error LNK2001: unresolved external symbol malloc
+imgui.obj : error LNK2001: unresolved external symbol malloc
+imgui_demo.obj : error LNK2001: unresolved external symbol malloc
+stb_image.obj : error LNK2001: unresolved external symbol malloc
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol malloc
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol qsort
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol qsort
+imgui.obj : error LNK2001: unresolved external symbol qsort
+imgui_demo.obj : error LNK2001: unresolved external symbol qsort
+imgui_draw.obj : error LNK2001: unresolved external symbol qsort
+imgui_widgets.obj : error LNK2001: unresolved external symbol qsort
+imgui.obj : error LNK2019: unresolved external symbol _wfopen referenced in function "struct _iobuf * __cdecl ImFileOpen(char const *,char const *)" (?ImFileOpen@@YAPEAU_iobuf@@PEBD0@Z)
+imgui.obj : error LNK2019: unresolved external symbol fseek referenced in function "unsigned __int64 __cdecl ImFileGetSize(struct _iobuf *)" (?ImFileGetSize@@YA_KPEAU_iobuf@@@Z)
+stb_image.obj : error LNK2001: unresolved external symbol fseek
+libcpmtd.lib(fiopen.obj) : error LNK2001: unresolved external symbol fseek
+imgui.obj : error LNK2019: unresolved external symbol ftell referenced in function "unsigned __int64 __cdecl ImFileGetSize(struct _iobuf *)" (?ImFileGetSize@@YA_KPEAU_iobuf@@@Z)
+stb_image.obj : error LNK2001: unresolved external symbol ftell
+imgui.obj : error LNK2019: unresolved external symbol __stdio_common_vsprintf referenced in function _vsnprintf_l
+imgui_demo.obj : error LNK2001: unresolved external symbol __stdio_common_vsprintf
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+imgui.obj : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+imgui_tables.obj : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+imgui_widgets.obj : error LNK2001: unresolved external symbol __stdio_common_vsscanf
+imgui.obj : error LNK2019: unresolved external symbol strstr referenced in function "struct ImGuiWindowSettings * __cdecl ImGui::CreateNewWindowSettings(char const *)" (?CreateNewWindowSettings@ImGui@@YAPEAUImGuiWindowSettings@@PEBD@Z)
+imgui_demo.obj : error LNK2001: unresolved external symbol strstr
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol strstr
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol strstr
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol strcmp
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol strcmp
+stb_image.obj : error LNK2001: unresolved external symbol strcmp
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol strcmp
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol strcmp
+GLFW.lib(vulkan.obj) : error LNK2001: unresolved external symbol strcmp
+imgui.obj : error LNK2001: unresolved external symbol strcmp
+imgui_demo.obj : error LNK2001: unresolved external symbol strcmp
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol strcmp
+imgui_widgets.obj : error LNK2001: unresolved external symbol strcmp
+GLFW.lib(context.obj) : error LNK2001: unresolved external symbol strncmp
+GLFW.lib(egl_context.obj) : error LNK2001: unresolved external symbol strncmp
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol strncmp
+imgui.obj : error LNK2001: unresolved external symbol strncmp
+imgui_demo.obj : error LNK2001: unresolved external symbol strncmp
+stb_image.obj : error LNK2001: unresolved external symbol strncmp
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol strncmp
+imgui.obj : error LNK2019: unresolved external symbol strncpy referenced in function "void __cdecl ImStrncpy(char *,char const *,unsigned __int64)" (?ImStrncpy@@YAXPEADPEBD_K@Z)
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol strncpy
+GLFW.lib(window.obj) : error LNK2001: unresolved external symbol strncpy
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol strncpy
+imgui.obj : error LNK2019: unresolved external symbol toupper referenced in function "int __cdecl ImStricmp(char const *,char const *)" (?ImStricmp@@YAHPEBD0@Z)
+imgui_demo.obj : error LNK2001: unresolved external symbol toupper
+imgui_demo.obj : error LNK2019: unresolved external symbol floorf referenced in function "void __cdecl ShowDemoWindowLayout(void)" (?ShowDemoWindowLayout@@YAXXZ)
+imgui_demo.obj : error LNK2019: unresolved external symbol strchr referenced in function "public: static int __cdecl `void __cdecl ShowDemoWindowWidgets(void)'::`270'::TextFilters::FilterImGuiLetters(struct ImGuiInputTextCallbackData *)" (?FilterImGuiLetters@TextFilters@?BAO@??ShowDemoWindowWidgets@@YAXXZ@SAHPEAUImGuiInputTextCallbackData@@@Z)
+imgui_demo.obj : error LNK2019: unresolved external symbol strcpy referenced in function "public: void __cdecl ExampleAppConsole::Draw(char const *,bool *)" (?Draw@ExampleAppConsole@@QEAAXPEBDPEA_N@Z)
+imgui_impl_opengl3.obj : error LNK2001: unresolved external symbol strcpy
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol strcpy
+imgui_draw.obj : error LNK2019: unresolved external symbol acosf referenced in function "float __cdecl ImAcos01(float)" (?ImAcos01@@YAMM@Z)
+imgui_impl_opengl3.obj : error LNK2019: unresolved external symbol strcat referenced in function "bool __cdecl ImGui_ImplOpenGL3_Init(char const *)" (?ImGui_ImplOpenGL3_Init@@YA_NPEBD@Z)
+imgui_widgets.obj : error LNK2019: unresolved external symbol log referenced in function "double __cdecl ImLog(double)" (?ImLog@@YANN@Z)
+    Hint on symbols that are defined and could potentially match:
+      "public: virtual void __cdecl spdlog::sinks::wincolor_sink<struct spdlog::details::console_mutex>::log(struct spdlog::details::log_msg const &)" (?log@?$wincolor_sink@Uconsole_mutex@details@spdlog@@@sinks@spdlog@@UEAAXAEBUlog_msg@details@3@@Z)
+imgui_widgets.obj : error LNK2019: unresolved external symbol pow referenced in function "double __cdecl ImPow(double,double)" (?ImPow@@YANNN@Z)
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol pow
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol pow
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol pow
+    Hint on symbols that are defined and could potentially match:
+      "float __cdecl pow(float,float)" (?pow@@YAMMM@Z)
+imgui_widgets.obj : error LNK2019: unresolved external symbol atof referenced in function "int __cdecl ImGui::RoundScalarWithFormatT<int,int>(char const *,int,int)" (??$RoundScalarWithFormatT@HH@ImGui@@YAHPEBDHH@Z)
+imgui_widgets.obj : error LNK2019: unresolved external symbol atan2f referenced in function "bool __cdecl ImGui::ColorPicker4(char const *,float * const,int,float const *)" (?ColorPicker4@ImGui@@YA_NPEBDQEAMHPEBM@Z)
+imgui_widgets.obj : error LNK2019: unresolved external symbol logf referenced in function "float __cdecl ImLog(float)" (?ImLog@@YAMM@Z)
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol powf
+imgui_widgets.obj : error LNK2001: unresolved external symbol powf
+stb_image.obj : error LNK2001: unresolved external symbol powf
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol powf
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol powf
+GLFW.lib(wgl_context.obj) : error LNK2001: unresolved external symbol abs
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol abs
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol abs
+Window.obj : error LNK2001: unresolved external symbol abs
+stb_image.obj : error LNK2001: unresolved external symbol abs
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol abs
+GLFW.lib(win32_window.obj) : error LNK2001: unresolved external symbol abs
+Window.obj : error LNK2019: unresolved external symbol frexp referenced in function "protected: virtual class std::ostreambuf_iterator<char,struct std::char_traits<char> > __cdecl std::num_put<char,class std::ostreambuf_iterator<char,struct std::char_traits<char> > >::do_put(class std::ostreambuf_iterator<char,struct std::char_traits<char> >,class std::ios_base &,char,double)const " (?do_put@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MEBA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AEAVios_base@2@DN@Z)
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol frexp
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol frexp
+LIBCMTD.lib(error.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf_s
+Window.obj : error LNK2001: unresolved external symbol __stdio_common_vsprintf_s
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf_s
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf_s
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf_s
+Window.obj : error LNK2019: unresolved external symbol strcspn referenced in function "private: class std::ostreambuf_iterator<char,struct std::char_traits<char> > __cdecl std::num_put<char,class std::ostreambuf_iterator<char,struct std::char_traits<char> > >::_Fput(class std::ostreambuf_iterator<char,struct std::char_traits<char> >,class std::ios_base &,char,char const *,unsigned __int64)const " (?_Fput@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@AEBA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AEAVios_base@2@DPEBD_K@Z)
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol strcspn
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol strcspn
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol strcspn
+stb_image.obj : error LNK2019: unresolved external symbol ldexp referenced in function ldexpf
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol ldexp
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol ldexp
+    Hint on symbols that are defined and could potentially match:
+      "float __cdecl ldexp(float,int)" (?ldexp@@YAMMH@Z)
+Glad.lib(glad.obj) : error LNK2001: unresolved external symbol realloc
+stb_image.obj : error LNK2001: unresolved external symbol realloc
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol realloc
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol realloc
+GLFW.lib(win32_monitor.obj) : error LNK2001: unresolved external symbol realloc
+stb_image.obj : error LNK2019: unresolved external symbol _lrotl referenced in function "int __cdecl stbi__extend_receive(struct stbi__jpeg *,int)" (?stbi__extend_receive@@YAHPEAUstbi__jpeg@@H@Z)
+stb_image.obj : error LNK2019: unresolved external symbol strtol referenced in function "int __cdecl stbi__hdr_info(struct stbi__context *,int *,int *,int *)" (?stbi__hdr_info@@YAHPEAUstbi__context@@PEAH11@Z)
+stb_image.obj : error LNK2019: unresolved external symbol fopen_s referenced in function "struct _iobuf * __cdecl stbi__fopen(char const *,char const *)" (?stbi__fopen@@YAPEAU_iobuf@@PEBD0@Z)
+stb_image.obj : error LNK2019: unresolved external symbol feof referenced in function "int __cdecl stbi__stdio_eof(void *)" (?stbi__stdio_eof@@YAHPEAX@Z)
+GLFW.lib(input.obj) : error LNK2019: unresolved external symbol strspn referenced in function glfwUpdateGamepadMappings
+libcpmtd.lib(xnotify.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(win32_monitor.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(wgl_context.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(egl_context.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(osmesa_context.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(win32_window.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(vulkan.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(win32_joystick.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(win32_init.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(input.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(init.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(monitor.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(window.obj) : error LNK2001: unresolved external symbol calloc
+GLFW.lib(input.obj) : error LNK2019: unresolved external symbol strtoul referenced in function parseMapping
+GLFW.lib(win32_monitor.obj) : error LNK2019: unresolved external symbol wcscmp referenced in function _glfwPollMonitorsWin32
+GLFW.lib(win32_monitor.obj) : error LNK2019: unresolved external symbol wcscpy referenced in function createMonitor
+libcpmtd.lib(xlock.obj) : error LNK2019: unresolved external symbol _lock_locales referenced in function "public: __cdecl std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QEAA@H@Z)
+libcpmtd.lib(xlock.obj) : error LNK2019: unresolved external symbol _unlock_locales referenced in function "public: __cdecl std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QEAA@XZ)
+libcpmtd.lib(cthread.obj) : error LNK2019: unresolved external symbol _beginthreadex referenced in function _Thrd_start
+libcpmtd.lib(cthread.obj) : error LNK2019: unresolved external symbol _endthreadex referenced in function _Thrd_exit
+libcpmtd.lib(mutex.obj) : error LNK2019: unresolved external symbol fputs referenced in function _Thrd_abort
+libcpmtd.lib(mutex.obj) : error LNK2019: unresolved external symbol abort referenced in function "void __cdecl Concurrency::details::create_stl_critical_section(class Concurrency::details::stl_critical_section_interface *)" (?create_stl_critical_section@details@Concurrency@@YAXPEAVstl_critical_section_interface@12@@Z)
+libcpmtd.lib(cond.obj) : error LNK2001: unresolved external symbol abort
+libcpmtd.lib(thread0.obj) : error LNK2001: unresolved external symbol abort
+libcpmtd.lib(iosptrs.obj) : error LNK2001: unresolved external symbol abort
+libcpmtd.lib(locale0.obj) : error LNK2019: unresolved external symbol setlocale referenced in function "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPEAV12@PEBD@Z)
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol setlocale
+libcpmtd.lib(xdateord.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xwcscoll.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xstrxfrm.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xwctomb.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(_toupper.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol ___lc_locale_name_func
+libcpmtd.lib(xwctomb.obj) : error LNK2019: unresolved external symbol ___lc_codepage_func referenced in function _Getcvt
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol ___lc_codepage_func
+libcpmtd.lib(_toupper.obj) : error LNK2001: unresolved external symbol ___lc_codepage_func
+libcpmtd.lib(xwctomb.obj) : error LNK2019: unresolved external symbol ___mb_cur_max_func referenced in function _Getcvt
+libcpmtd.lib(xwctomb.obj) : error LNK2019: unresolved external symbol __pctype_func referenced in function _Getcvt
+libcpmtd.lib(_tolower.obj) : error LNK2001: unresolved external symbol __pctype_func
+libcpmtd.lib(_toupper.obj) : error LNK2001: unresolved external symbol __pctype_func
+libcpmtd.lib(uncaught_exception.obj) : error LNK2019: unresolved external symbol __uncaught_exception referenced in function "bool __cdecl std::uncaught_exception(void)" (?uncaught_exception@std@@YA_NXZ)
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol _wcsdup_dbg referenced in function _Getctype
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol _wcsdup_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol isupper referenced in function _Tolower
+libcpmtd.lib(_toupper.obj) : error LNK2019: unresolved external symbol islower referenced in function _Toupper
+libcpmtd.lib(fiopen.obj) : error LNK2019: unresolved external symbol _wfsopen referenced in function "struct _iobuf * __cdecl std::_Xfsopen(wchar_t const *,int,int)" (?_Xfsopen@std@@YAPEAU_iobuf@@PEB_WHH@Z)
+libcpmtd.lib(fiopen.obj) : error LNK2019: unresolved external symbol _fsopen referenced in function "struct _iobuf * __cdecl std::_Xfsopen(char const *,int,int)" (?_Xfsopen@std@@YAPEAU_iobuf@@PEBDHH@Z)
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol strtof referenced in function "float __cdecl std::_Stofx_v2(char const *,char * *,int,int *)" (?_Stofx_v2@std@@YAMPEBDPEAPEADHPEAH@Z)
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol strtof
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol strtod referenced in function "double __cdecl std::_Stodx_v2(char const *,char * *,int,int *)" (?_Stodx_v2@std@@YANPEBDPEAPEADHPEAH@Z)
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol strtod
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol strtod
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol _realloc_dbg referenced in function "private: static void __cdecl std::locale::_Locimp::_Locimp_Addfac(class std::locale::_Locimp *,class std::locale::facet *,unsigned __int64)" (?_Locimp_Addfac@_Locimp@locale@std@@CAXPEAV123@PEAVfacet@23@_K@Z)
+LIBCMTD.lib(thread_safe_statics.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+libcpmtd.lib(xmbtowc.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+LIBCMTD.lib(init.obj) : error LNK2001: unresolved external symbol _CrtDbgReportW
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2019: unresolved external symbol __strncnt referenced in function __crtLCMapStringA
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __strncnt
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol wcslen referenced in function "wchar_t * __cdecl std::_Maklocwcs(wchar_t const *)" (?_Maklocwcs@std@@YAPEA_WPEB_W@Z)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol wcslen
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _Getdays referenced in function "public: char const * __cdecl std::_Locinfo::_Getdays(void)const " (?_Getdays@_Locinfo@std@@QEBAPEBDXZ)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _Getdays
+    Hint on symbols that are defined and could potentially match:
+      "public: char const * __cdecl std::_Locinfo::_Getdays(void)const " (?_Getdays@_Locinfo@std@@QEBAPEBDXZ)
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _Getmonths referenced in function "public: char const * __cdecl std::_Locinfo::_Getmonths(void)const " (?_Getmonths@_Locinfo@std@@QEBAPEBDXZ)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _Getmonths
+    Hint on symbols that are defined and could potentially match:
+      "public: char const * __cdecl std::_Locinfo::_Getmonths(void)const " (?_Getmonths@_Locinfo@std@@QEBAPEBDXZ)
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _W_Getdays referenced in function "public: unsigned short const * __cdecl std::_Locinfo::_W_Getdays(void)const " (?_W_Getdays@_Locinfo@std@@QEBAPEBGXZ)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _W_Getdays
+    Hint on symbols that are defined and could potentially match:
+      "public: unsigned short const * __cdecl std::_Locinfo::_W_Getdays(void)const " (?_W_Getdays@_Locinfo@std@@QEBAPEBGXZ)
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _W_Getmonths referenced in function "public: unsigned short const * __cdecl std::_Locinfo::_W_Getmonths(void)const " (?_W_Getmonths@_Locinfo@std@@QEBAPEBGXZ)
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol _W_Getmonths
+    Hint on symbols that are defined and could potentially match:
+      "public: unsigned short const * __cdecl std::_Locinfo::_W_Getmonths(void)const " (?_W_Getmonths@_Locinfo@std@@QEBAPEBGXZ)
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _W_Gettnames referenced in function "public: class std::_Timevec __cdecl std::_Locinfo::_W_Gettnames(void)const " (?_W_Gettnames@_Locinfo@std@@QEBA?AV_Timevec@2@XZ)
+    Hint on symbols that are defined and could potentially match:
+      "public: class std::_Timevec __cdecl std::_Locinfo::_W_Gettnames(void)const " (?_W_Gettnames@_Locinfo@std@@QEBA?AV_Timevec@2@XZ)
+libcpmtd.lib(wlocale.obj) : error LNK2019: unresolved external symbol _Wcsftime referenced in function "protected: virtual class std::ostreambuf_iterator<unsigned short,struct std::char_traits<unsigned short> > __cdecl std::time_put<unsigned short,class std::ostreambuf_iterator<unsigned short,struct std::char_traits<unsigned short> > >::do_put(class std::ostreambuf_iterator<unsigned short,struct std::char_traits<unsigned short> >,class std::ios_base &,unsigned short,struct tm const *,char,char)const " (?do_put@?$time_put@GV?$ostreambuf_iterator@GU?$char_traits@G@std@@@std@@@std@@MEBA?AV?$ostreambuf_iterator@GU?$char_traits@G@std@@@2@V32@AEAVios_base@2@GPEBUtm@@DD@Z)
+libcpmtd.lib(xlocale.obj) : error LNK2019: unresolved external symbol _Gettnames referenced in function "public: class std::_Timevec __cdecl std::_Locinfo::_Gettnames(void)const " (?_Gettnames@_Locinfo@std@@QEBA?AV_Timevec@2@XZ)
+    Hint on symbols that are defined and could potentially match:
+      "public: class std::_Timevec __cdecl std::_Locinfo::_Gettnames(void)const " (?_Gettnames@_Locinfo@std@@QEBA?AV_Timevec@2@XZ)
+libcpmtd.lib(xlocale.obj) : error LNK2019: unresolved external symbol _Strftime referenced in function "protected: virtual class std::ostreambuf_iterator<char,struct std::char_traits<char> > __cdecl std::time_put<char,class std::ostreambuf_iterator<char,struct std::char_traits<char> > >::do_put(class std::ostreambuf_iterator<char,struct std::char_traits<char> >,class std::ios_base &,char,struct tm const *,char,char)const " (?do_put@?$time_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MEBA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AEAVios_base@2@DPEBUtm@@DD@Z)
+libcpmtd.lib(xstol.obj) : error LNK2019: unresolved external symbol isspace referenced in function _Stolx
+libcpmtd.lib(xstoul.obj) : error LNK2001: unresolved external symbol isspace
+libcpmtd.lib(xstoll.obj) : error LNK2001: unresolved external symbol isspace
+libcpmtd.lib(xstoull.obj) : error LNK2001: unresolved external symbol isspace
+libcpmtd.lib(xstoul.obj) : error LNK2019: unresolved external symbol tolower referenced in function _Stoulx
+libcpmtd.lib(xstoull.obj) : error LNK2001: unresolved external symbol tolower
+    Hint on symbols that are defined and could potentially match:
+      "public: char __cdecl std::ctype<char>::tolower(char)const " (?tolower@?$ctype@D@std@@QEBADD@Z)
+      "public: unsigned short __cdecl std::ctype<unsigned short>::tolower(unsigned short)const " (?tolower@?$ctype@G@std@@QEBAGG@Z)
+      "public: wchar_t __cdecl std::ctype<wchar_t>::tolower(wchar_t)const " (?tolower@?$ctype@_W@std@@QEBA_W_W@Z)
+libcpmtd.lib(xstrcoll.obj) : error LNK2019: unresolved external symbol ___lc_collate_cp_func referenced in function _Getcoll
+libcpmtd.lib(xstrxfrm.obj) : error LNK2001: unresolved external symbol ___lc_collate_cp_func
+libcpmtd.lib(StlCompareStringW.obj) : error LNK2019: unresolved external symbol wcsnlen referenced in function __crtCompareStringW
+libcpmtd.lib(StlLCMapStringW.obj) : error LNK2001: unresolved external symbol wcsnlen
+LIBCMTD.lib(new_scalar.obj) : error LNK2019: unresolved external symbol _callnewh referenced in function "void * __cdecl operator new(unsigned __int64)" (??2@YAPEAX_K@Z)
+LIBCMTD.lib(ehvecdtr.obj) : error LNK2019: unresolved external symbol __current_exception referenced in function "int __cdecl ArrayUnwindFilter(struct _EXCEPTION_POINTERS *)" (?ArrayUnwindFilter@@YAHPEAU_EXCEPTION_POINTERS@@@Z)
+LIBCMTD.lib(utility_desktop.obj) : error LNK2001: unresolved external symbol __current_exception
+LIBCMTD.lib(ehvecdtr.obj) : error LNK2019: unresolved external symbol __current_exception_context referenced in function "int __cdecl ArrayUnwindFilter(struct _EXCEPTION_POINTERS *)" (?ArrayUnwindFilter@@YAHPEAU_EXCEPTION_POINTERS@@@Z)
+LIBCMTD.lib(utility_desktop.obj) : error LNK2001: unresolved external symbol __current_exception_context
+LIBCMTD.lib(ehvecdtr.obj) : error LNK2001: unresolved external symbol __C_specific_handler
+LIBCMTD.lib(utility.obj) : error LNK2001: unresolved external symbol __C_specific_handler
+LIBCMTD.lib(ehvecctr.obj) : error LNK2001: unresolved external symbol __C_specific_handler
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __vcrt_initialize referenced in function __scrt_initialize_crt
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __vcrt_uninitialize referenced in function __scrt_initialize_crt
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __vcrt_uninitialize_critical referenced in function __scrt_dllmain_uninitialize_critical
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __vcrt_thread_attach referenced in function __scrt_dllmain_crt_thread_attach
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __vcrt_thread_detach referenced in function __scrt_dllmain_crt_thread_attach
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _seh_filter_dll referenced in function __scrt_dllmain_exception_filter
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _is_c_termination_complete referenced in function __scrt_dllmain_uninitialize_c
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _configure_narrow_argv referenced in function "public: static int __cdecl __scrt_narrow_argv_policy::configure_argv(void)" (?configure_argv@__scrt_narrow_argv_policy@@SAHXZ)
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _initialize_narrow_environment referenced in function "public: static int __cdecl __scrt_narrow_environment_policy::initialize_environment(void)" (?initialize_environment@__scrt_narrow_environment_policy@@SAHXZ)
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _initialize_onexit_table referenced in function __scrt_initialize_onexit_tables
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _register_onexit_function referenced in function _onexit
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _execute_onexit_table referenced in function __scrt_dllmain_uninitialize_c
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _crt_atexit referenced in function _onexit
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _crt_at_quick_exit referenced in function at_quick_exit
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __acrt_initialize referenced in function __scrt_initialize_crt
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __acrt_uninitialize referenced in function __scrt_uninitialize_crt
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __acrt_uninitialize_critical referenced in function __scrt_dllmain_uninitialize_critical
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __acrt_thread_attach referenced in function __scrt_dllmain_crt_thread_attach
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol __acrt_thread_detach referenced in function __scrt_dllmain_crt_thread_detach
+LIBCMTD.lib(utility.obj) : error LNK2019: unresolved external symbol _cexit referenced in function __scrt_dllmain_uninitialize_c
+LIBCMTD.lib(error.obj) : error LNK2019: unresolved external symbol strcpy_s referenced in function "void __cdecl _RTC_StackFailure(void *,char const *)" (?_RTC_StackFailure@@YAXPEAXPEBD@Z)
+LIBCMTD.lib(error.obj) : error LNK2019: unresolved external symbol strcat_s referenced in function "void __cdecl _RTC_StackFailure(void *,char const *)" (?_RTC_StackFailure@@YAXPEAXPEBD@Z)
+LIBCMTD.lib(error.obj) : error LNK2001: unresolved external symbol __C_specific_handler_noexcept
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol _wmakepath_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned __int64)" (?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z)
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol _wsplitpath_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned __int64)" (?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z)
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol wcscpy_s referenced in function "int __cdecl GetPdbDllPathFromFilePath(wchar_t const *,wchar_t *,unsigned __int64)" (?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z)
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol __vcrt_GetModuleFileNameW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPEAUHINSTANCE__@@XZ)
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol __vcrt_GetModuleHandleW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPEAUHINSTANCE__@@XZ)
+LIBCMTD.lib(pdblkup.obj) : error LNK2019: unresolved external symbol __vcrt_LoadLibraryExW referenced in function "struct HINSTANCE__ * __cdecl GetPdbDll(void)" (?GetPdbDll@@YAPEAUHINSTANCE__@@XZ)
+..\bin\Debug-windows-x86_64\SuperBit\SuperBit.exe : fatal error LNK1120: 164 unresolved externals

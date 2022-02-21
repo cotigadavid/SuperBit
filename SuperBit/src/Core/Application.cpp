@@ -79,6 +79,8 @@ namespace SuperBit {
 
 			Render();
 
+			SB_INFO("{0}", Player->m_NrOfCards);
+
 			if (m_GameRunning)
 			{
 			
@@ -269,13 +271,13 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 
 		ImGui::SetCursorPos({ 50 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
-		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver && Player->m_NrOfCards > 1)
+		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver && (Player->m_NrOfCards > 1 || Player2 && CurrentPlayer->m_NrOfCards > 0))
 		{
 			CurrentPlayer->AddCard();
 		}
 
 		ImGui::SetCursorPos({ 800 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
-		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }) && Player->m_NrOfCards > 1)
+		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }) && (Player->m_NrOfCards > 1 || Player2 && CurrentPlayer->m_NrOfCards > 0))
 		{
 			CurrentPlayer->TurnOver = true;
 		}

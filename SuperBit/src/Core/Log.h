@@ -18,7 +18,7 @@ namespace SuperBit {
 }
 
 // Core log macros
-#if 0
+#if 1
 #define SB_INFO(...)     ::SuperBit::Log::GetLogger()->info(__VA_ARGS__)
 #define SB_TRACE(...)    ::SuperBit::Log::GetLogger()->trace(__VA_ARGS__)
 #define SB_WARN(...)     ::SuperBit::Log::GetLogger()->warn(__VA_ARGS__)
