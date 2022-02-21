@@ -121,6 +121,11 @@ namespace SuperBit {
 					CurrentPlayer->TurnOver = true;
 				}
 
+				if (CurrentPlayer->m_Sum == 21 && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
+				{					
+					CurrentPlayer->TurnOver = true;
+				}
+
 				if (CurrentPlayer->GameOver || CurrentPlayer->TurnOver)
 				{
 					if (Player2)
@@ -536,7 +541,7 @@ namespace SuperBit {
 		if (Input::IsKeyPressed(Key::Y))
 		{
 			SB_ERROR("AFAGG");
-			Renderer2D::DrawQuad({ 200, 200, 0.9999999 }, { 200, 200 }, front);
+			Renderer2D::DrawQuad({ 300, 300, 0.9999999 }, { 200, 200 }, front);
 		}
 
 		Renderer2D::DrawQuad({ m_Window->GetWidth() / 2, m_Window->GetHeight() / 2, 0 }, { m_Window->GetWidth(), m_Window->GetHeight() }, background);
