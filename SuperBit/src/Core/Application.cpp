@@ -269,13 +269,13 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.5f, 0.0f, 1.0f });
 
 		ImGui::SetCursorPos({ 50 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
-		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
+		if (ImGui::Button("Hit", { 150 * m_Ratio, 75 * m_Ratio }) && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver && Player->m_NrOfCards > 1)
 		{
 			CurrentPlayer->AddCard();
 		}
 
 		ImGui::SetCursorPos({ 800 * m_Ratio, ImGuiLayer::CursorCenteredVertically(50 * m_Ratio) + 200 * m_Ratio });
-		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }))
+		if (ImGui::Button("Stand", { 150 * m_Ratio, 75 * m_Ratio }) && Player->m_NrOfCards > 1)
 		{
 			CurrentPlayer->TurnOver = true;
 		}
@@ -304,7 +304,7 @@ namespace SuperBit {
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		ImGui::SetCursorPos({ ImGuiLayer::CursorCenteredHorizontally(125 * m_Ratio), ImGuiLayer::CursorCenteredVertically(35 * m_Ratio) - 20 * m_Ratio });
-		if (ImGui::Button("Double", { 125 * m_Ratio, 35 * m_Ratio }) && ((!Player2 && CurrentPlayer->m_NrOfCards == 2) || CurrentPlayer->m_NrOfCards == 1) && m_Money >= m_Bet * 2 && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
+		if (ImGui::Button("Double", { 125 * m_Ratio, 35 * m_Ratio }) && ((!Player2 && CurrentPlayer->m_NrOfCards == 2) || (Player2 && CurrentPlayer->m_NrOfCards == 1)) && m_Money >= m_Bet * 2 && !CurrentPlayer->GameOver && !CurrentPlayer->TurnOver)
 		{
 			CurrentPlayer->AddCard();
 			CurrentPlayer->TurnOver = true;
@@ -315,7 +315,7 @@ namespace SuperBit {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.0f, 0.0f, 0.7f, 1.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.0f, 0.0f, 0.5f, 1.0f });
 
-		if (ImGui::Button("Split", { 75 * m_Ratio, 75 * m_Ratio })/* && Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice */&& m_Money >= m_Bet * 2)
+		if (ImGui::Button("Split", { 75 * m_Ratio, 75 * m_Ratio }) && Player->m_NrOfCards == 2 && Player->m_Cards[0].m_Indice == Player->m_Cards[1].m_Indice && m_Money >= m_Bet * 2)
 		{
 			Player2 = new Person(0);
 			Player2->m_Cards.push_back(Player->m_Cards[Player->m_Cards.size() - 1]);
@@ -389,12 +389,12 @@ namespace SuperBit {
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
-		ImGui::SetCursorPos({ 860 * m_Ratio, 25 * m_Ratio });
+		ImGui::SetCursorPos({ 865 * m_Ratio, 25 * m_Ratio });
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
-		if (ImGui::Button("reset", { 65 * m_Ratio, 30 * m_Ratio }))
+		if (ImGui::Button("reset", { 55 * m_Ratio, 30 * m_Ratio }))
 		{
 			m_Money = 100;
 		}
@@ -469,12 +469,12 @@ namespace SuperBit {
 
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3);
-		ImGui::SetCursorPos({ 860 * m_Ratio, 25 * m_Ratio });
+		ImGui::SetCursorPos({ 865 * m_Ratio, 25 * m_Ratio });
 
 		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.5f, 0.5f, 0.5f, 0.7f });
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.5f, 0.5f, 0.5f, 0.0f });
-		if (ImGui::Button("reset##f", { 65 * m_Ratio, 30 * m_Ratio }))
+		if (ImGui::Button("reset##f", { 55 * m_Ratio, 30 * m_Ratio }))
 		{
 			m_Money = 100;
 		}

@@ -1,44 +1,119 @@
-﻿  Application.cpp
-D:\SuperBit\SuperBit\src\Core\Application.cpp(25,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(435,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(436,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(437,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(438,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(439,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
-D:\SuperBit\SuperBit\src\Core\Application.cpp(489,23): warning C4834: discarding return value of function with 'nodiscard' attribute
-D:\SuperBit\SuperBit\src\Core\Application.cpp(496,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+﻿  sbpch.cpp
+  Application.cpp
+D:\SuperBit\SuperBit\src\Core\Application.cpp(26,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(33,87): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(33,58): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(253,76): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(253,53): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(271,79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(277,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(306,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(306,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(360,106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(367,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(377,106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(383,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(412,76): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(412,53): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(434,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(434,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(449,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(450,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(451,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(452,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(453,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+D:\SuperBit\SuperBit\src\Core\Application.cpp(463,66): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(542,23): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\SuperBit\SuperBit\src\Core\Application.cpp(549,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(497,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(550,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(498,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(510,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(551,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(563,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(511,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(564,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(512,43): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(524,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(565,43): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(576,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(525,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(577,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SuperBit\SuperBit\src\Core\Application.cpp(526,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(559,27): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-D:\SuperBit\SuperBit\src\Core\Application.cpp(559,20): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(578,42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(620,27): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\SuperBit\SuperBit\src\Core\Application.cpp(620,20): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+  Input.cpp
+  Log.cpp
+  ProjectionData.cpp
+  Card.cpp
+D:\SuperBit\SuperBit\src\Game\Card.cpp(17,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Game\Card.cpp(18,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Game\Card.cpp(19,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\SuperBit\SuperBit\src\Game\Card.cpp(21,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Person.cpp
+  ImGuiLayer.cpp
+  Buffer.cpp
+  OpenGLContext.cpp
+  Renderer.cpp
+  Renderer2D.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xutility(138,73): warning C4244: 'argument': conversion from '_Ty' to 'unsigned int', possible loss of data
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2186): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=SuperBit::VertexBuffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2906): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=SuperBit::VertexBuffer
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(2907): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<unsigned __int64>(unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=SuperBit::VertexBuffer
+          ]
+D:\SuperBit\SuperBit\src\OpenGL\Renderer2D.cpp(50): message : see reference to function template instantiation 'std::shared_ptr<SuperBit::VertexBuffer> std::make_shared<SuperBit::VertexBuffer,unsigned __int64>(unsigned __int64 &&)' being compiled
+  Shader.cpp
+  Texture.cpp
+  VertexArray.cpp
+D:\SuperBit\SuperBit\src\OpenGL\VertexArray.cpp(75,34): warning C4312: 'type cast': conversion from 'const unsigned int' to 'const void *' of greater size
+D:\SuperBit\SuperBit\src\OpenGL\VertexArray.cpp(90,34): warning C4312: 'type cast': conversion from 'const unsigned int' to 'const void *' of greater size
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(222,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(250,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(251,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\SuperBit\SuperBit\src\TempGui\imgui_impl_opengl3.cpp(609,5): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  imgui_tables.cpp
+  Generating Code...
+  Compiling...
+  imgui_widgets.cpp
+  Window.cpp
+  main.cpp
+  stb_image.cpp
+  Generating Code...
   SuperBit.vcxproj -> D:\SuperBit\bin\Debug-windows-x86_64\SuperBit\SuperBit.exe
